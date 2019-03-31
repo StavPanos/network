@@ -6,19 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
-                <p>My name: {{Auth::user()->name}}</p>
-                <p>My Email: {{Auth::user()->email}}</p>
-
-                {{auth()->user()}}
-
-                <img src="{{auth()->user()->avatar}}">
-
-                {{auth()->user()->provider_token}}
-
-
-                <!-- {{auth()->user()->repos}} -->
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

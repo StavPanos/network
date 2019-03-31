@@ -23,8 +23,8 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('provider_token')->nullable();
 
-            $table->string('provider');
-            $table->integer('provider_id');
+            $table->string('provider')->nullable();
+            $table->string('provider_id')->nullable();
 
             // $table->integer('country_id');
 

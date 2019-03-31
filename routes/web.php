@@ -22,9 +22,14 @@ Auth::routes();
 Route::get('auth/{provider}', 'Auth\SocialController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\SocialController@handleProviderCallback');
 
+Route::get('profile/{userId}', 'ProfileController@view');
+Route::get('profile', 'ProfileController@index')->middleware('auth');
+Route::get('friends', 'ProfileController@friends')->middleware('auth');
+Route::post('connect', 'ProfileController@connect')->middleware('auth');
+Route::post('disconnect', 'ProfileController@disconnect')->middleware('auth');
 
 Route::get('users', function () {
-    return User::all();
+    return User::with('friends')->get();
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
