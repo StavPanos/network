@@ -26,7 +26,11 @@ class CreateUsersTable extends Migration
             $table->string('provider')->nullable();
             $table->string('provider_id')->nullable();
 
-            // $table->integer('country_id');
+            $table->string('location')->nullable();
+            $table->text('bio')->nullable();
+            $table->boolean('hireable')->nullable();
+            $table->string('blog')->nullable();
+            $table->string('company')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
