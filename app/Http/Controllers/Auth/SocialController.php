@@ -53,18 +53,18 @@ class SocialController extends Controller
         $authUser = User::where('provider_id', $user->id)->first();
 
         if ($authUser) {
-            if (strpos('github', $provider) !== false) {
-                $data = $this->curl('https://api.github.com/user?access_token=' . $authUser->provider_token);
-            }
-            dd($data);
+            // if (strpos('github', $provider) !== false) {
+            //     $data = $this->curl('https://api.github.com/user?access_token=' . $authUser->provider_token);
+            // }
+            // dd($data);
 
-            $authUser->update([
-                'location' => $data->location,
-                'bio' => $data->bio,
-                'hireable' => $data->hireable,
-                'blog' => $data->blog,
-                'company' => $data->company,
-            ]);
+            // $authUser->update([
+            //     'location' => $data->location,
+            //     'bio' => $data->bio,
+            //     'hireable' => $data->hireable,
+            //     'blog' => $data->blog,
+            //     'company' => $data->company,
+            // ]);
             return $authUser;
         } else {
             // if (strpos('github', $provider) !== false) {
