@@ -28,6 +28,34 @@
                 @else
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <i class="fa fa-user"></i>
+                            <span class="caret"></span>
+                        </a>
+
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            @foreach(auth()->user()->friend_requests as $request)
+                                <a class="dropdown-item" href="/home">
+                                    {{$request->name}}
+                                    <form method="post" action="friend/accept">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{$request->id}}">
+                                        <button type="submit">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+                                    </form>
+                                    <form method="post" action="friend/decline">
+                                        {{csrf_field()}}
+                                        <button type="submit">
+                                            <i class="fa fa-window-close"></i>
+                                        </button>
+                                    </form>
+                                </a>
+                            @endforeach
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 

@@ -38,7 +38,12 @@ class User extends Authenticatable
 
     public function friends()
     {
-        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id');
+        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id')->withPivot('status');
+    }
+
+    public function friend_requests()
+    {
+        return $this->belongsToMany('App\User', 'friend_requests', 'user_id', 'friend_id');
     }
 
     public function repositories()
