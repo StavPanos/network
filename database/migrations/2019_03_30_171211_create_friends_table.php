@@ -17,7 +17,7 @@ class CreateFriendsTable extends Migration
             $table->primary(['user_id', 'friend_id']);
             $table->integer('user_id');
             $table->integer('friend_id');
-            $table->boolean('accepted')->default(false);
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

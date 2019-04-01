@@ -28,6 +28,8 @@ Route::get('friends', 'ProfileController@friends')->middleware('auth');
 Route::post('connect', 'ProfileController@connect')->middleware('auth');
 Route::post('disconnect', 'ProfileController@disconnect')->middleware('auth');
 
+Route::post('post/create', 'PostController@create')->middleware('auth');
+
 Route::get('users', function () {
     return User::with('friends')->get();
 });

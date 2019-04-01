@@ -8,7 +8,8 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('profile.index');
+        $posts = auth()->user()->posts;
+        return view('profile.index', compact('posts'));
     }
 
     public function view($userId)
@@ -25,7 +26,14 @@ class ProfileController extends Controller
     {
         $friend_id = request()->id;
 
-        auth()->user()->friends()->sync($friend_id);
+        auth()->user()->friends()->attach($friend_id);
+
+        return back();
+    }
+
+    public function accept()
+    {
+        auth()->user()->friends()->updateExistingPivot('status', 'accepted');
 
         return back();
     }

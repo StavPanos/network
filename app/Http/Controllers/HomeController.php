@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class HomeController extends Controller
 {
     /**
@@ -23,6 +21,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $posts = [];
+        foreach (auth()->user()->friends as $key => $friend) {
+            $posts[] = $friend->posts;
+        }
+
+        return view('home', compact('posts'));
     }
 }
