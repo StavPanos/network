@@ -44,10 +44,23 @@ return [
         ],
     ],
 
+    // 'github' => [
+    //     'client_id' => env('GITHUB_CLIENT_ID'),
+    //     'client_secret' => env('GITHUB_CLIENT_SECRET'),
+    //     'redirect' => env('GITHUB_URL'),
+    // ],
+
+    // 'bitbucket' => [
+    //     'client_id' => env('BITBUCKET_CLIENT_ID'),
+    //     'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
+    //     'redirect' => env('BITBUCKET_URL'),
+    // ],
+
+     //FOR HEROKU
     'github' => [
-        'client_id' => env('GITHUB_CLIENT_ID'),
-        'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => env('GITHUB_URL'),
+        'client_id' => '5c42c8366612a30f6289',
+        'client_secret' => '80108152b20e1b6d5ceed8505ad6aaad50144cd0',
+        'redirect' => 'http://network.test/auth/github/callback',
     ],
 
     'bitbucket' => [
@@ -55,4 +68,5 @@ return [
         'client_secret' => env('BITBUCKET_CLIENT_SECRET'),
         'redirect' => env('BITBUCKET_URL'),
     ],
+
 ];
