@@ -16,6 +16,10 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    {{--FOR HTTPS HEROKU--}}
+    <script src="https://dev-network-assignment.herokuapp.com/js/app.js"></script>
+    <link rel="stylesheet" href="https://dev-network-assignment.herokuapp.com/css/app.css">
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
