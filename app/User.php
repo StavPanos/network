@@ -2,12 +2,13 @@
 
 namespace App;
 
+use Hootlex\Friendships\Traits\Friendable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, Friendable;
 
     /**
      * The attributes that are mass assignable.
@@ -36,16 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function friends()
-    {
-        return $this->belongsToMany('App\User', 'friends', 'user_id', 'friend_id')->withPivot('status');
-    }
-
-    public function friend_requests()
-    {
-        return $this->belongsToMany('App\User', 'friend_requests', 'user_id', 'friend_id');
-    }
-
     public function repositories()
     {
         return $this->hasMany('App\Repository');
@@ -54,5 +45,10 @@ class User extends Authenticatable
     public function posts()
     {
         return $this->hasMany('App\Post');
+    }
+
+    public function notifications()
+    {
+        return $this->hasMany('App\Notification');
     }
 }

@@ -18,6 +18,9 @@ class UserTableSeeder extends Seeder
         $user->name = 'John Doe';
         $user->password = bcrypt('12345678');
         $user->email = 'johndoe@gmail.com';
+
+        $user->programming_language = 'PYTHON';
+        $user->country = 'FRANCE';
         $user->save();
     }
 }

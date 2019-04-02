@@ -22,10 +22,6 @@ class DashboardController extends Controller
     public function index()
     {
         $posts = [];
-        foreach (auth()->user()->friends as $key => $friend) {
-            $posts[] = $friend->posts;
-        }
-
         return view('dashboard', compact('posts'));
     }
 }

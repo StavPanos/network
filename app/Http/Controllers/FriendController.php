@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class FriendController extends Controller
 {
     public function index()
     {
-        $friends = auth()->user()->friends;
+        $recommended = User::where([
+                ['country', '=', auth()->user()->country],
+                ['programming_language', '=', auth()->user()->programming_language]
+            ])->get();
 
-        return view('friends.index', compact('friends'));
+        return view('friends.index', compact('recommended'));
     }
-    
+
     public function connect()
     {
         $user->friend_requests()->attach(auth()->user()->id);

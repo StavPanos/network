@@ -39,7 +39,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
-                            @foreach(auth()->user()->friend_requests as $request)
+                            @foreach(auth()->user()->notifications as $notification)
                                 <a class="dropdown-item" href="/home">
                                     {{$request->name}}
                                     <form method="post" action="friend/accept">

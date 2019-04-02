@@ -25,7 +25,7 @@ Route::post('friend/decline', 'FriendController@decline')->middleware('auth');
 Route::post('post/create', 'PostController@create')->middleware('auth');
 
 Route::get('users', function () {
-    return User::with('friend_requests')->with('friends')->get();
+    return User::all();
 });
 
 Route::get('/dashboard', 'DashboardController@index')->name('home');
