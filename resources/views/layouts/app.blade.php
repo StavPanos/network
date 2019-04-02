@@ -16,6 +16,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     {{--FOR HTTPS HEROKU--}}
     <script src="https://dev-network-assignment.herokuapp.com/js/app.js"></script>
     <link rel="stylesheet" href="https://dev-network-assignment.herokuapp.com/css/app.css">
