@@ -29,8 +29,15 @@
                         </div>
                     @endif
 
-                    @foreach(auth()->user()->posts as $post)
-                        {{$post->description}}
+                    @foreach($posts as $post)
+                        <div class="card">
+                            <div class="card-header">
+                                {{$post->user->name}} posted  {{$post->created_at->diffForHumans()}}
+                            </div>
+                            <div class="card-body">
+                                {{$post->content}}
+                            </div>
+                        </div>
                     @endforeach
                 </div>
             </div>

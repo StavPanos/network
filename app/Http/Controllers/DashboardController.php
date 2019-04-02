@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+
 class DashboardController extends Controller
 {
     /**
@@ -14,18 +16,26 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
+    public function getUsers($users)
+    {
+        $ids = [];
+        foreach ($users as $request){
+            $ids[] = $request->sender_id;
+        }
+
+        return User::whereIn('id', $ids)->get();
+    }
+
     public function index()
     {
-        $friends = auth()->user()->getAllFriendships();
+        $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
         $posts = [];
         foreach ($friends as $friend){
-            $posts[] = $friend->posts;
+            foreach ($friend->posts as $post){
+                $posts[] = $post;
+            }
         }
+
         return view('dashboard', compact('posts'));
     }
 }

@@ -2,13 +2,14 @@
 
 namespace App;
 
+use App\Traits\FriendableTempFix;
 use Hootlex\Friendships\Traits\Friendable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Friendable;
+    use Notifiable, FriendableTempFix;
 
     /**
      * The attributes that are mass assignable.

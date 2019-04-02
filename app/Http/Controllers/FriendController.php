@@ -25,7 +25,7 @@ class FriendController extends Controller
             ])->get();
 
         $requests = $this->getUsers(auth()->user()->getFriendRequests());
-        $friends = $this->getUsers(auth()->user()->getAllFriendships());
+        $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
 
         return view('friends.index', compact('recommended', 'requests', 'friends'));
     }
@@ -37,6 +37,13 @@ class FriendController extends Controller
         return back()->with('success', 'Friend Request sent');
     }
 
+    public function disconnect()
+    {
+        auth()->user()->unfriend(User::find(request()->id));
+
+        return back()->with('success', 'Friend removed');
+    }
+
     public function accept()
     {
         $user = User::find(request()->id);
@@ -44,15 +51,6 @@ class FriendController extends Controller
         auth()->user()->acceptFriendRequest($user);
 
         return back()->with('success', 'Friend Accepted');
-    }
-
-    public function disconnect()
-    {
-        $friend_id = request()->id;
-
-        auth()->user()->friends()->detach($friend_id);
-
-        return back();
     }
 
     public function friends()

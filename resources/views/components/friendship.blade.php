@@ -12,7 +12,7 @@
                 </form>
             @else
                 <div class="text-muted">
-                    <form method="post" action="friend/disconnect">
+                    <form method="post" action="/friend/disconnect">
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$user->id}}">
                         <button class="btn btn-danger w-100" type="submit">Disconnect</button>
