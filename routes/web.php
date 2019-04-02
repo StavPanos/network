@@ -20,6 +20,7 @@ Route::get('profile', 'ProfileController@index')->middleware('auth');
 
 Route::get('friends', 'FriendController@index')->middleware('auth');
 Route::post('friend/accept', 'FriendController@accept')->middleware('auth');
+Route::post('friend/connect', 'FriendController@connect')->middleware('auth');
 Route::post('friend/decline', 'FriendController@decline')->middleware('auth');
 
 Route::post('post/create', 'PostController@create')->middleware('auth');

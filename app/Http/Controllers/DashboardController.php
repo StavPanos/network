@@ -21,7 +21,11 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $friends = auth()->user()->getAllFriendships();
         $posts = [];
+        foreach ($friends as $friend){
+            $posts[] = $friend->posts;
+        }
         return view('dashboard', compact('posts'));
     }
 }

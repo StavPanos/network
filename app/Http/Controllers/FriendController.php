@@ -7,6 +7,16 @@ use Illuminate\Http\Request;
 
 class FriendController extends Controller
 {
+    public function getUsers($users)
+    {
+        $ids = [];
+        foreach ($users as $request){
+            $ids[] = $request->sender_id;
+        }
+
+        return User::whereIn('id', $ids)->get();
+    }
+
     public function index()
     {
         $recommended = User::where([
@@ -14,25 +24,26 @@ class FriendController extends Controller
                 ['programming_language', '=', auth()->user()->programming_language]
             ])->get();
 
-        return view('friends.index', compact('recommended'));
+        $requests = $this->getUsers(auth()->user()->getFriendRequests());
+        $friends = $this->getUsers(auth()->user()->getAllFriendships());
+
+        return view('friends.index', compact('recommended', 'requests', 'friends'));
     }
 
     public function connect()
     {
-        $user->friend_requests()->attach(auth()->user()->id);
+        auth()->user()->befriend(User::find(request()->id));
 
-        return back();
+        return back()->with('success', 'Friend Request sent');
     }
 
     public function accept()
     {
-        $friend_id = request()->id;
+        $user = User::find(request()->id);
 
-        auth()->user()->friends()->attach($friend_id);
+        auth()->user()->acceptFriendRequest($user);
 
-        auth()->user()->friends()->updateExistingPivot(['status'=>'accepted']);
-
-        return back();
+        return back()->with('success', 'Friend Accepted');
     }
 
     public function disconnect()

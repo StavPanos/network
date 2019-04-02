@@ -2,7 +2,7 @@
     <div class="card">
         <div class="card-header">
             @if(!auth()->user()->isFriendWith($user))
-                <form method="post" action="friend/connect">
+                <form method="post" action="/friend/connect">
                     {{csrf_field()}}
                     <input type="hidden" name="id" value="{{$user->id}}">
                     <button class="btn btn-primary w-100" type="submit">
@@ -20,7 +20,7 @@
                 </div>
             @endif
 
-                <br>
+            <br>
 
             <form method="post" action="friend/block">
                 {{csrf_field()}}
