@@ -11,7 +11,9 @@
                     <form method="post" action="post/create">
                         {{csrf_field()}}
                         <div class="form-group">
-                          <label for="comment">POST </label>
+                          <label for="comment">
+                              Share a thought
+                          </label>
                           <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
                         </div>
 

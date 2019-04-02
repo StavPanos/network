@@ -27,6 +27,11 @@
                         @foreach($recommended as $recommendation)
                         <li class="list-group-item">
                             <a href="/profile/{{$recommendation->id}}">
+                                @if($recommendation->avatar)
+                                    <img src="{{$recommendation->avatar}}" width="50">
+                                @else
+                                    <img src="{{asset('images/no-image.png')}}" alt="" width="50">
+                                @endif
                                 {{$recommendation->name}}
                             </a>
                         </li>
