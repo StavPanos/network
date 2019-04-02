@@ -12,7 +12,7 @@
                         {{csrf_field()}}
                         <div class="form-group">
                           <label for="comment">POST </label>
-                          <textarea name="content" class="form-control" rows="5" id="comment"></textarea>
+                          <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
                         </div>
 
                         <div class="form-group">
@@ -29,7 +29,6 @@
 
                     @foreach(auth()->user()->posts as $post)
                         {{$post->description}}
-
                     @endforeach
                 </div>
             </div>

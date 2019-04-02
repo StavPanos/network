@@ -26,9 +26,15 @@
                         </li>
                     @endif
                 @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">
+                            <i class="fa fa-dashboard"></i>
+                        </a>
+                    </li>
+
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            <i class="fa fa-user"></i>
+                            <i class="fa fa-bell"></i>
                             <span class="caret"></span>
                         </a>
 
@@ -43,6 +49,7 @@
                                             <i class="fa fa-check"></i>
                                         </button>
                                     </form>
+
                                     <form method="post" action="friend/decline">
                                         {{csrf_field()}}
                                         <button type="submit">
@@ -60,7 +67,6 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="/home">Home</a>
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="/friends">Friends</a>
 

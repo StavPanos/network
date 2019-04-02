@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,6 +26,6 @@ class HomeController extends Controller
             $posts[] = $friend->posts;
         }
 
-        return view('home', compact('posts'));
+        return view('dashboard', compact('posts'));
     }
 }
