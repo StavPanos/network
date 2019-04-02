@@ -60,7 +60,7 @@ return [
     'github' => [
         'client_id' => '5c42c8366612a30f6289',
         'client_secret' => '80108152b20e1b6d5ceed8505ad6aaad50144cd0',
-        'redirect' => 'http://network.test/auth/github/callback',
+        'redirect' => 'http://dev-network-assignment.herokuapp.com/auth/github/callback',
     ],
 
     'bitbucket' => [
