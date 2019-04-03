@@ -32,9 +32,7 @@ class CreateUsersTable extends Migration
             $table->string('blog')->nullable();
             $table->string('company')->nullable();
 
-            $table->string('country')->nullable();
-
-            $table->string('programming_language')->nullable();
+            $table->integer('country_id')->nullable();
 
             $table->rememberToken();
             $table->timestamps();

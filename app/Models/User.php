@@ -1,9 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Traits\FriendableTempFix;
-use Hootlex\Friendships\Traits\Friendable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -40,16 +39,26 @@ class User extends Authenticatable
 
     public function repositories()
     {
-        return $this->hasMany('App\Repository');
+        return $this->hasMany('App\Models\Repository');
     }
 
     public function posts()
     {
-        return $this->hasMany('App\Post');
+        return $this->hasMany('App\Models\Post');
+    }
+
+    public function country()
+    {
+        return $this->belongsTo('App\Models\Country');
     }
 
     public function notifications()
     {
-        return $this->hasMany('App\Notification');
+        return $this->hasMany('App\Models\Notification');
+    }
+
+    public function planguages()
+    {
+        return $this->belongsToMany('App\Models\Planguage');
     }
 }

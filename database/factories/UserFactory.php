@@ -1,12 +1,16 @@
 <?php
 
-use App\Post;
-use App\User;
+use App\Models\Country;
+use App\Models\Planguage;
+use App\Models\Post;
+use App\Models\User;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
-$languages = ['PHP', 'JAVA', 'PYTHON'];
-$countries = ['Greece', 'France', 'Spain'];
+$languages = json_decode(file_get_contents(asset('data/planguages.json')), true);
+$countries = json_decode(file_get_contents(asset('data/countries.json')), true);
+Planguage::insert($languages);
+Country::insert($countries);
 
 $factory->define(User::class, function (Faker $faker) use ($languages, $countries) {
     return [
@@ -15,8 +19,8 @@ $factory->define(User::class, function (Faker $faker) use ($languages, $countrie
         'email_verified_at' => now(),
         'password' => bcrypt('12345678'),
         'remember_token' => Str::random(10),
-        'programming_language' => $languages[array_rand($languages)],
-        'country' => $countries[array_rand($countries)]
+        'bio' => $faker->paragraph,
+        'country_id' => rand(1, 230)
     ];
 });
 

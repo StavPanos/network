@@ -12,15 +12,13 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\User', 150)->create();
+        factory('App\Post', 150)->create();
 
         $user = new User;
         $user->name = 'John Doe';
         $user->password = bcrypt('12345678');
         $user->email = 'johndoe@gmail.com';
-
-        $user->programming_language = 'PYTHON';
-        $user->country = 'FRANCE';
+        $user->country_id = '102';
         $user->save();
     }
 }
