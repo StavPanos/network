@@ -9,7 +9,7 @@ class FriendController extends Controller
     public function getUsers($users)
     {
         $ids = [];
-        foreach ($users as $request){
+        foreach ($users as $request) {
             $ids[] = $request->sender_id;
         }
 
@@ -18,10 +18,11 @@ class FriendController extends Controller
 
     public function index()
     {
-        $recommended = User::where([
-                ['country', '=', auth()->user()->country],
-                ['programming_language', '=', auth()->user()->programming_language]
-            ])->get();
+        // $recommended = User::where([
+        //         ['country', '=', auth()->user()->country],
+        //         ['programming_language', '=', auth()->user()->programming_language]
+        //     ])->get();
+        $recommended = [];
 
         $requests = $this->getUsers(auth()->user()->getFriendRequests());
         $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
