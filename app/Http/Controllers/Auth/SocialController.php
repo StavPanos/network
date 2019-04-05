@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Auth;
 use Socialite;
-use App\User;
+use App\Models\User;
 
 class SocialController extends Controller
 {
