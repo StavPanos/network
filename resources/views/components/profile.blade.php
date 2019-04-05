@@ -23,8 +23,10 @@
                     {{$user->bio}}
                 </li>
                 <li class="list-group-item">
-                    <img src="https://www.countryflags.io/{{$user->country->code}}/flat/64.png">
-                    {{$user->country->name}}
+                    @if(isset($user->country))
+                        <img src="https://www.countryflags.io/{{$user->country->code}}/flat/64.png">
+                        {{$user->country->name}}
+                    @endif
                 </li>
                 <li class="list-group-item">
                     Programming Language: {{$user->programming_language}}
