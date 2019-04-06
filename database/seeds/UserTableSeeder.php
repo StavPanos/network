@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\User;
+use App\Models\User;
 
 class UserTableSeeder extends Seeder
 {
@@ -12,7 +12,9 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\Post', 150)->create();
+        factory('App\Models\Post', 150)->create()->each(function($post){
+            $post->user->planguages()->sync([1, 2, 5]);
+        });
 
         $user = new User;
         $user->name = 'John Doe';

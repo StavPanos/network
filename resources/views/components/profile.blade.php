@@ -10,22 +10,40 @@
                     <i class="fa fa-user"></i>
                     {{$user->name}}
                 </li>
+
                 <li class="list-group-item">
                     <i class="fa fa-envelope"></i>
                     {{$user->email}}
                 </li>
-                <li class="list-group-item">
-                    <i class="fa fa-info"></i>
-                    {{$user->bio}}
-                </li>
+
+                @if($user->bio)
+                    <li class="list-group-item">
+                        <i class="fa fa-info"></i>
+                        {{$user->bio}}
+                    </li>
+                @endif
+
+                @if($user->country)
                 <li class="list-group-item">
                     @if(isset($user->country))
-                        <img src="https://www.countryflags.io/{{$user->country->code}}/flat/64.png">
+                        <img src="https://www.countryflags.io/{{$user->country->code}}/shiny/64.png">
                         {{$user->country->name}}
                     @endif
                 </li>
+                @endif
+
                 <li class="list-group-item">
-                    Programming Language: {{$user->programming_language}}
+                    Programming Languages
+
+                    <ul class="list-group">
+                        @forelse($user->planguages as $lang)
+                            <li class="list-group-item">
+                                {{$lang->name}}
+                            </li>
+                        @empty
+                            No Langs
+                        @endforelse
+                    </ul>
                 </li>
             </ul>
         </div>

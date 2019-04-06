@@ -12,7 +12,7 @@ $countries = json_decode(file_get_contents(asset('data/countries.json')), true);
 Planguage::insert($languages);
 Country::insert($countries);
 
-$factory->define(User::class, function (Faker $faker) use ($languages, $countries) {
+$factory->define(User::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
@@ -24,9 +24,9 @@ $factory->define(User::class, function (Faker $faker) use ($languages, $countrie
     ];
 });
 
-$factory->define(Post::class, function (Faker $faker) use ($languages, $countries) {
+$factory->define(Post::class, function (Faker $faker) {
     return [
         'content' => $faker->sentence,
-        'user_id' => factory('App\User')->create()->id
+        'user_id' => factory('App\Models\User')->create()->id
     ];
 });

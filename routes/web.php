@@ -30,5 +30,6 @@ Route::post('search', 'SearchController@search');
 // Admin routes
 Route::get('map', 'MapController@index');
 Route::get('users', function () {
-    return User::all();
+    return User::with('planguages')->get();
+//    return \App\Models\Planguage::all();
 });

@@ -24,7 +24,10 @@
                                         <input type="hidden" name="id" value="{{$request->id}}">
                                         <button class="btn btn-success w-100" type="submit">Accept</button>
                                     </form>
-                                    {{$request->name}}
+
+                                    <a href="profile/{{$request->id}}">
+                                        {{$request->name}}
+                                    </a>
                                 </li>
                             @endforeach
                         </ul>
