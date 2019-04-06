@@ -9,7 +9,7 @@ use App\Models\User;
 
 class SocialController extends Controller
 {
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/dashboard';
 
     public function curl($url)
     {
