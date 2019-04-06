@@ -3,36 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Auth;
-use Socialite;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 
 class SocialController extends Controller
 {
     protected $redirectTo = '/dashboard';
-
-    public function curl($url)
-    {
-        $curl = curl_init();
-
-        curl_setopt_array($curl, [
-            CURLOPT_URL => $url,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT => 30,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => "GET",
-            CURLOPT_HTTPHEADER => [
-                "cache-control: no-cache"
-            ],
-        ]);
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-
-        curl_close($curl);
-
-        return json_decode($response);
-    }
 
     public function redirectToProvider($provider)
     {
@@ -53,24 +30,11 @@ class SocialController extends Controller
         $authUser = User::where('provider_id', $user->id)->first();
 
         if ($authUser) {
-            // if (strpos('github', $provider) !== false) {
-            //     $data = $this->curl('https://api.github.com/user?access_token=' . $authUser->provider_token);
-            // }
-            // dd($data);
-
-            // $authUser->update([
-            //     'location' => $data->location,
-            //     'bio' => $data->bio,
-            //     'hireable' => $data->hireable,
-            //     'blog' => $data->blog,
-            //     'company' => $data->company,
-            // ]);
             return $authUser;
         } else {
-            // if (strpos('github', $provider) !== false) {
-            //     $data = $this->curl('https://api.github.com/user?access_token=' . $user->token);
-            // }
-            // dd($data);
+            $user = User::where('email', $user->email)->first();
+            if($user)
+                User::destroy($user->id);
 
             return User::create([
                 'provider_token' => $user->token,
@@ -78,12 +42,7 @@ class SocialController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'provider' => $provider,
-                'provider_id' => $user->id,
-                // 'location' => $data->location,
-                // 'bio' => $data->bio,
-                // 'hireable' => $data->hireable,
-                // 'blog' => $data->blog,
-                // 'company' => $data->company,
+                'provider_id' => $user->id
             ]);
         }
     }
