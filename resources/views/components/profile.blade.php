@@ -1,11 +1,7 @@
 <div class="col-md-4">
     <div class="card">
         <div class="card-header">
-            @if($user->avatar)
-                <img src="{{$user->avatar}}" class="w-100">
-            @else
-                <img src="{{asset('images/no-image.png')}}" alt="" class="w-100">
-            @endif
+            @include('components.avatar', ['user'=>$user])
         </div>
 
         <div class="card-body">

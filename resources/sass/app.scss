@@ -1,25 +1,16 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+//@import url('https://fonts.googleapis.com/css?family=DejaVu+Sans+Mono');
+
 // Variables
 @import 'variables';
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Font awesome
 @import "node_modules/font-awesome/scss/font-awesome";
 
-.navbar-laravel {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-#website {
-    background-image: url('/images/background.jpeg');
-    height: 100%;
-}
-
-#chartdiv {
-    width: 100%;
-    height: 500px;
-}
-
+// Custom styles
+@import "main";
 
 

@@ -1,0 +1,32 @@
+@font-face {
+    font-family: Monaco;
+    src: url('/fonts/Monaco.ttf');
+}
+
+body{
+    font-family: 'Monaco';
+}
+
+.navbar-laravel {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+#website {
+    background-image: url('/images/background.jpeg');
+    height: 100%;
+}
+
+#chartdiv {
+    width: 100%;
+    height: 500px;
+}
+
+.card{
+    border-radius: 0;
+}
+
+.dropdown-menu{
+    padding: 0;
+    margin: 0;
+}

@@ -16,6 +16,10 @@ class DashboardController extends Controller
         $this->middleware('auth');
     }
 
+    /**
+     * @param $users
+     * @return mixed
+     */
     public function getUsers($users)
     {
         $ids = [];
