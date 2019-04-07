@@ -66,7 +66,7 @@
 
                                 <div class="form-group row mb-0">
                                     <div class="col-md-6 offset-md-4">
-                                        {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '500px']) !!}
+                                        {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '100%']) !!}
                                     </div>
                                 </div>
 
