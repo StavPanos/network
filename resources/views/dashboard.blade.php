@@ -33,9 +33,15 @@
 
                         @forelse($posts as $post)
                             <div class="card">
-                                <div class="card-header">
-                                    {{$post->user->name}} posted  {{$post->created_at->diffForHumans()}}
-                                </div>
+                                @if(!$post->user->id == auth()->user()->id)
+                                    <div class="card-header">
+                                        {{$post->user->name}} posted  {{$post->created_at->diffForHumans()}}
+                                    </div>
+                                @else
+                                    <div class="card-header">
+                                        I posted  {{$post->created_at->diffForHumans()}}
+                                    </div>
+                                @endif
                                 <div class="card-body">
                                     {{$post->content}}
                                 </div>

@@ -32,8 +32,10 @@ class DashboardController extends Controller
 
     public function index()
     {
+        $posts = auth()->user()->posts;
+
         $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
-        $posts = [];
+
         foreach ($friends as $friend){
             foreach ($friend->posts as $post){
                 $posts[] = $post;
