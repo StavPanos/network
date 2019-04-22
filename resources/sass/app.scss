@@ -1,14 +1,14 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat|Raleway|Material+Icons');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import '~daemonite-material/css/material.min.css';
 
 // Font awesome
-@import "node_modules/font-awesome/scss/font-awesome";
+@import "~font-awesome/scss/font-awesome";
 
 // Custom styles
 @import "main";

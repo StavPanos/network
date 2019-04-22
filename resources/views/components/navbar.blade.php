@@ -13,11 +13,11 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <li class="nav-item ml-3">
+                            <a class="nav-link btn btn-info" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else
@@ -25,19 +25,12 @@
                         @include('components.search')
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">
-                            <i class="fa fa-dashboard"></i>
-                        </a>
-                    </li>
-
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <i class="fa fa-bell"></i>
-                            <span class="caret"></span>
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown1">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                             @foreach(auth()->user()->notifications as $notification)
                                 <a class="dropdown-item" href="/home">
                                     {{$request->name}}
@@ -61,11 +54,11 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown2" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ auth()->user()->name }} <span class="caret"></span>
+                        <a id="navbarDropdown2" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ auth()->user()->name }}
                         </a>
 
-                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="/friends">Friends</a>
 

@@ -24,8 +24,10 @@ Route::post('friend/accept', 'FriendController@accept')->middleware('auth');
 Route::post('friend/connect', 'FriendController@connect')->middleware('auth');
 Route::post('friend/disconnect', 'FriendController@disconnect')->middleware('auth');
 Route::post('friend/decline', 'FriendController@decline')->middleware('auth');
-Route::post('post/create', 'PostController@create')->middleware('auth');
 Route::post('search', 'SearchController@search');
+
+Route::post('post/create', 'PostController@create')->middleware('auth');
+Route::post('post/delete', 'PostController@destroy')->middleware('auth');
 
 // Admin routes
 Route::get('map', 'MapController@index');

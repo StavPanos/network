@@ -5,23 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Social Network for Developers') }}</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    {{-- Heroku --}}
-    {{--<script src="https://dev-network-assignment.herokuapp.com/js/app.js"></script>--}}
-    {{--<link rel="stylesheet" href="https://dev-network-assignment.herokuapp.com/css/app.css">--}}
-
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body id="website">
+<body>
     <div id="app">
         @include('components.navbar')
-        @include('components.flash-message')
-        <main>
+        <main class="mb-5">
             @yield('content')
         </main>
+        @include('components.footer')
     </div>
 
     <script src="{{ asset('js/app.js') }}" defer></script>

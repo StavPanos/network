@@ -8,7 +8,7 @@
                     <div class="card-header">
                         <h2>Dashboard</h2>
 
-                        <form method="post" action="post/create">
+                        <form method="post" action="post/create" class="mt-5">
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="comment">
@@ -21,6 +21,16 @@
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
+
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                     </div>
 
 
@@ -33,15 +43,18 @@
 
                         @forelse($posts as $post)
                             <div class="card">
-                                @if(!$post->user->id == auth()->user()->id)
-                                    <div class="card-header">
-                                        {{$post->user->name}} posted  {{$post->created_at->diffForHumans()}}
-                                    </div>
-                                @else
-                                    <div class="card-header">
-                                        I posted  {{$post->created_at->diffForHumans()}}
-                                    </div>
-                                @endif
+                                <div class="card-header">
+                                    <img src="{{$post->user->avatar}}" alt="">
+                                    <a href="profile/{{$post->user->id}}">{{$post->user->name}}</a>
+                                    posted  {{$post->created_at->diffForHumans()}}
+                                    <form action="/post/delete" method="post" class="d-inline">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="post_id" value="{{$post->id}}">
+                                        <button type="submit" class="btn btn-link">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </form>
+                                </div>
                                 <div class="card-body">
                                     {{$post->content}}
                                 </div>
@@ -50,7 +63,6 @@
                             <p>No posts</p>
                         @endforelse
                     </div>
-
                 </div>
             </div>
         </div>
