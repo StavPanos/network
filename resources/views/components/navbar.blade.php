@@ -13,7 +13,7 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link btn btn-info" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item ml-3">

@@ -27,4 +27,14 @@ class StorePost extends FormRequest
             'content' => 'bail|required|unique:posts'
         ];
     }
+
+    /**
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'content.required' => 'Content is required'
+        ];
+    }
 }

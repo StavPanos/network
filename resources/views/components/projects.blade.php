@@ -1,5 +1,7 @@
 <div class="card">
     <div class="card-header">
-        PROJECTS
+        <h2>
+            PROJECTS
+        </h2>
     </div>
 </div>

@@ -71,13 +71,13 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-                            {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '100%']) !!}
+{{--                            {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '100%']) !!}--}}
                         </div>
                     </div>
 
                     <div class="form-group row mb-0 mt-3">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <button type="submit" class="btn btn-info" style="width: 100%;">
                                 {{ __('Register') }}
                             </button>
                         </div>

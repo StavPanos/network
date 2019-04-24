@@ -11,20 +11,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
+
 Route::get('auth/{provider}', 'Auth\SocialController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\SocialController@handleProviderCallback');
 Route::get('profile/{userId}', 'ProfileController@view');
 
 // Authenticated user routes
-Route::get('dashboard', 'DashboardController@index')->name('home');
-Route::get('profile', 'ProfileController@index')->middleware('auth');
-Route::get('friends', 'FriendController@index')->middleware('auth');
+Route::get('dashboard', 'DashboardController@index')->name('home')->middleware('verified');
+Route::get('profile', 'ProfileController@index')->middleware('auth')->middleware('verified');
+Route::get('friends', 'FriendController@index')->middleware('auth')->middleware('verified');
+
 Route::post('friend/accept', 'FriendController@accept')->middleware('auth');
 Route::post('friend/connect', 'FriendController@connect')->middleware('auth');
 Route::post('friend/disconnect', 'FriendController@disconnect')->middleware('auth');
 Route::post('friend/decline', 'FriendController@decline')->middleware('auth');
-Route::post('search', 'SearchController@search');
+Route::post('search', 'SearchController@search')->middleware('verified');
 
 Route::post('post/create', 'PostController@create')->middleware('auth');
 Route::post('post/delete', 'PostController@destroy')->middleware('auth');
@@ -33,5 +35,4 @@ Route::post('post/delete', 'PostController@destroy')->middleware('auth');
 Route::get('map', 'MapController@index');
 Route::get('users', function () {
     return User::with('planguages')->get();
-//    return \App\Models\Planguage::all();
 });

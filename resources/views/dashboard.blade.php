@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
@@ -17,20 +17,16 @@
                                 <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
                             </div>
 
+                            @if ($errors->has('content'))
+                                <span class="invalid-" role="alert">
+                                    <strong>{{ $errors->first('content') }}</strong>
+                                </span>
+                            @endif
+
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-info">Submit</button>
                             </div>
                         </form>
-
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
                     </div>
 
 
@@ -42,15 +38,15 @@
                         @endif
 
                         @forelse($posts as $post)
-                            <div class="card">
+                            <div class="card mt-3">
                                 <div class="card-header">
                                     <img src="{{$post->user->avatar}}" alt="">
-                                    <a href="profile/{{$post->user->id}}">{{$post->user->name}}</a>
+                                    <a class="link" href="profile/{{$post->user->id}}">{{$post->user->name}}</a>
                                     posted  {{$post->created_at->diffForHumans()}}
                                     <form action="/post/delete" method="post" class="d-inline">
                                         {{csrf_field()}}
                                         <input type="hidden" name="post_id" value="{{$post->id}}">
-                                        <button type="submit" class="btn btn-link">
+                                        <button type="submit" class=" ml-3 btn btn-danger">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>
