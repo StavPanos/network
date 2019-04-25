@@ -60,7 +60,7 @@
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                             <a class="dropdown-item" href="/profile">Profile</a>
-                            <a class="dropdown-item" href="/friends">Friends</a>
+                            <a class="dropdown-item" href="/connections">Connections</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">

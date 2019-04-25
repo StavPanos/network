@@ -21,4 +21,22 @@ class ProfileController extends Controller
         $user = User::findOrFail($userId);
         return view('profile.view', compact('user'));
     }
+
+    public function update_avatar()
+    {
+        request()->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $user = auth()->user();
+
+        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+
+        request()->avatar->storeAs('avatars',$avatarName);
+
+        $user->avatar = $avatarName;
+        $user->save();
+
+        return back()->with('success','You have successfully upload image.');
+    }
 }

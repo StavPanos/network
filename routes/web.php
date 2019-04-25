@@ -20,7 +20,7 @@ Route::get('profile/{userId}', 'ProfileController@view');
 // Authenticated user routes
 Route::get('dashboard', 'DashboardController@index')->name('home')->middleware('verified');
 Route::get('profile', 'ProfileController@index')->middleware('auth')->middleware('verified');
-Route::get('friends', 'FriendController@index')->middleware('auth')->middleware('verified');
+Route::get('connections', 'FriendController@index')->middleware('auth')->middleware('verified');
 
 Route::post('friend/accept', 'FriendController@accept')->middleware('auth');
 Route::post('friend/connect', 'FriendController@connect')->middleware('auth');
@@ -30,6 +30,8 @@ Route::post('search', 'SearchController@search')->middleware('verified');
 
 Route::post('post/create', 'PostController@create')->middleware('auth');
 Route::post('post/delete', 'PostController@destroy')->middleware('auth');
+
+Route::post('avatar', 'ProfileController@update_avatar');
 
 // Admin routes
 Route::get('map', 'MapController@index');

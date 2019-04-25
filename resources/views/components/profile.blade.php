@@ -2,6 +2,7 @@
     <div class="card">
         <div class="card-header">
             @include('components.avatar', ['user'=>$user])
+            @include('components.edit_profile')
         </div>
 
         <div class="card-body">
