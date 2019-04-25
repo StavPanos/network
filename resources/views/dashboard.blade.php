@@ -12,7 +12,7 @@
                             {{csrf_field()}}
                             <div class="form-group">
                                 <label for="comment">
-                                    Share a thought
+                                    Add a post
                                 </label>
                                 <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
                             </div>
@@ -46,7 +46,7 @@
                                     <form action="/post/delete" method="post" class="d-inline">
                                         {{csrf_field()}}
                                         <input type="hidden" name="post_id" value="{{$post->id}}">
-                                        <button type="submit" class=" ml-3 btn btn-danger">
+                                        <button type="submit" class="ml-3 btn btn-link">
                                             <i class="fa fa-trash"></i>
                                         </button>
                                     </form>

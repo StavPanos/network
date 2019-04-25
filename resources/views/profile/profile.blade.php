@@ -1,8 +1,8 @@
 <div class="col-md-4">
     <div class="card">
         <div class="card-header">
-            @include('components.avatar', ['user'=>$user])
-            @include('components.edit_profile')
+            @include('profile.avatar', ['user'=>$user])
+            @include('profile.edit_profile')
         </div>
 
         <div class="card-body">
@@ -32,19 +32,40 @@
                     @endif
                 </li>
                 @endif
+            </ul>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="card">
+        <div class="card-header">
+            Technology
+        </div>
+
+        <div class="card-body">
+            <ul class="list-group">
 
                 <li class="list-group-item">
                     Programming Languages
 
                     <ul class="list-group">
-                        @forelse($user->planguages as $lang)
+                        @foreach($user->planguages as $lang)
                             <li class="list-group-item">
                                 {{$lang->name}}
                             </li>
-                        @empty
-                            No Langs
-                        @endforelse
+                        @endforeach
                     </ul>
+                </li>
+
+                <li class="list-group-item">
+                    <select id="example">
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
                 </li>
             </ul>
         </div>

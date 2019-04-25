@@ -8,6 +8,7 @@ try {
 } catch (e) {}
 
 require('daemonite-material/js/material.min.js');
+require('jquery-bar-rating/dist/jquery.barrating.min');
 
 window.axios = require('axios');
 

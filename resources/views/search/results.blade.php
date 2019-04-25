@@ -14,7 +14,7 @@
                         <ul class="list-group">
                             @forelse($users as $user)
                                 <li class="list-group-item">
-                                    @include('components.avatar', ['user'=>$user])
+                                    @include('profile.avatar', ['user'=>$user])
                                     <a href="/profile/{{$user->id}}">
                                         {{$user->name}}
                                     </a>

@@ -14,8 +14,10 @@ class ProfileController extends Controller
 
     public function view($userId)
     {
-        if ($userId == auth()->user()->id) {
-            return redirect('profile');
+        if (auth()->check()) {
+            if ($userId == auth()->user()->id) {
+                return redirect('profile');
+            }
         }
 
         $user = User::findOrFail($userId);
@@ -30,13 +32,21 @@ class ProfileController extends Controller
 
         $user = auth()->user();
 
-        $avatarName = $user->id.'_avatar'.time().'.'.request()->avatar->getClientOriginalExtension();
+        $avatarName = $user->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
 
-        request()->avatar->storeAs('avatars',$avatarName);
+        request()->avatar->storeAs('avatars', $avatarName);
 
         $user->avatar = $avatarName;
         $user->save();
 
-        return back()->with('success','You have successfully upload image.');
+        return back()->with('success', 'You have successfully upload image.');
+    }
+
+    public function update()
+    {
+        auth()->user()->name = request('name');
+        auth()->user()->save();
+
+        return back();
     }
 }

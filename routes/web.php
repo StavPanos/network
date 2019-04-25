@@ -32,6 +32,7 @@ Route::post('post/create', 'PostController@create')->middleware('auth');
 Route::post('post/delete', 'PostController@destroy')->middleware('auth');
 
 Route::post('avatar', 'ProfileController@update_avatar');
+Route::post('profile/edit', 'ProfileController@update');
 
 // Admin routes
 Route::get('map', 'MapController@index');

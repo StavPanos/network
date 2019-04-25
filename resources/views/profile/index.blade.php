@@ -3,11 +3,11 @@
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
-            @include('components.profile', ['user' => auth()->user()])
+            @include('profile.profile', ['user' => auth()->user()])
             <div class="col-md-8">
-                @include('components.projects', ['user'=>auth()->user()])
+                @include('projects.projects', ['user'=>auth()->user()])
                 <br>
-                @include('components.posts', ['user' => auth()->user()])
+                @include('posts.posts', ['user' => auth()->user()])
             </div>
         </div>
     </div>
