@@ -35,7 +35,7 @@ class SocialController extends Controller
         } else {
             $user_ = User::where('email', $user->email)->first();
             if ($user_) {
-                return $user_->update([
+                $user_->update([
                     'provider_token' => $user->token,
                     'avatar' => $user->avatar,
                     'name' => $user->name,
@@ -44,6 +44,8 @@ class SocialController extends Controller
                     'provider_id' => $user->id,
                     'email_verified_at' => Carbon::now()->timestamp
                 ]);
+
+                return $user_;
             } else {
                 return User::create([
                     'provider_token' => $user->token,
