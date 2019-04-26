@@ -42,7 +42,7 @@ class DashboardController extends Controller
             }
         }
 
-        dd($posts);
+        dd($friends);
 
         return view('dashboard', compact('posts'));
     }
