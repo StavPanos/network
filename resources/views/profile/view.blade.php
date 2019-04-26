@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         <div class="row justify-content-center">
-            @include('components.profile', ['user' => $user])
+            @include('profile.profile', ['user' => $user])
             <div class="col-md-6">
                 @include('projects.projects', ['user'=>$user])
                 <br>

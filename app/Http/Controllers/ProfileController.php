@@ -45,6 +45,7 @@ class ProfileController extends Controller
     public function update()
     {
         auth()->user()->name = request('name');
+        auth()->user()->bio = request('bio');
         auth()->user()->save();
 
         return back();

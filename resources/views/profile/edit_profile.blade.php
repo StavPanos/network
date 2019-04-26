@@ -1,6 +1,6 @@
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-    <i class="fa fa-edit"></i>
+    <i class="fa fa-edit text-black"></i>
 </button>
 
 <!-- Modal -->
@@ -25,7 +25,7 @@
                             not be more than 2MB.
                         </small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-info">Change image</button>
                 </form>
 
                 <br><br>
@@ -34,6 +34,13 @@
                     @csrf
                     <label for="name">Name</label>
                     <input type="text" name="name" value="{{$user->name}}">
+
+                    <br><br>
+
+                    <label for="name">Bio</label>
+                    <textarea name="bio" value="{{$user->bio}}"></textarea>
+
+                    <br>
 
                     <button type="submit" class="btn btn-info">Save</button>
                 </form>

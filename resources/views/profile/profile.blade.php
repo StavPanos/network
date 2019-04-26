@@ -2,7 +2,11 @@
     <div class="card">
         <div class="card-header">
             @include('profile.avatar', ['user'=>$user])
-            @include('profile.edit_profile')
+            @if(auth()->check())
+                @if(auth()->user()->id == $user->id)
+                    @include('profile.edit_profile')
+                @endif
+            @endif
         </div>
 
         <div class="card-body">
@@ -25,12 +29,12 @@
                 @endif
 
                 @if($user->country)
-                <li class="list-group-item">
-                    @if(isset($user->country))
-                        <img src="https://www.countryflags.io/{{$user->country->code}}/shiny/64.png">
-                        {{$user->country->name}}
-                    @endif
-                </li>
+                    <li class="list-group-item">
+                        @if(isset($user->country))
+                            <img src="https://www.countryflags.io/{{$user->country->code}}/shiny/64.png">
+                            {{$user->country->name}}
+                        @endif
+                    </li>
                 @endif
             </ul>
         </div>
@@ -60,11 +64,11 @@
 
                 <li class="list-group-item">
                     <select id="example">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                 </li>
             </ul>

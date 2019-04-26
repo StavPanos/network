@@ -10,7 +10,7 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="comment">
-                            Share a thought
+                            Add post
                         </label>
                         <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
                     </div>
@@ -27,18 +27,23 @@
         <div class="card-body">
             {{$post->created_at->diffForHumans()}}
 
-            <form action="/post/delete" method="post" class="d-inline">
-                {{csrf_field()}}
-                <input type="hidden" name="post_id" value="{{$post->id}}">
-                <button type="submit" class="ml-3 btn btn-link">
-                    <i class="fa fa-trash"></i>
-                </button>
-            </form>
+            @if(auth()->check())
+                @if(auth()->user()->id == $user->id)
+                    <form action="/post/delete" method="post" class="d-inline">
+                        {{csrf_field()}}
+                        <input type="hidden" name="post_id" value="{{$post->id}}">
+                        <button type="submit" class="ml-3 btn btn-link">
+                            <i class="fa fa-trash text-black"></i>
+                        </button>
+                    </form>
+                @endif
+            @endif
 
             <hr>
-            <br>
 
-            {{$post->content}}
+            <p>
+                {{$post->content}}
+            </p>
         </div>
     @endforeach
 </div>

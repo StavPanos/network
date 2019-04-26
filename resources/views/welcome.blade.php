@@ -6,11 +6,10 @@
             <div class="col-md-12">
                 <div class="welcome text-center text-white">
                     <div class="welcome-text">
-                        <h1>SHOW YOUR CODING SKILLS AND GET HIRED</h1>
+                        <h1>SHOW YOUR CODING SKILLS</h1>
 
                         <h2 class="mt-5">
-                            Have your online Developer Page and
-                            get best job offers you can find worldwide
+                            Have your online Developer Page
                         </h2>
 
                         <a class="btn btn-info mt-5" href="/register">REGISTER</a>

@@ -34,6 +34,10 @@ Route::post('post/delete', 'PostController@destroy')->middleware('auth');
 Route::post('avatar', 'ProfileController@update_avatar');
 Route::post('profile/edit', 'ProfileController@update');
 
+Route::post('project/create', 'ProjectController@create');
+Route::post('project/delete', 'ProjectController@destroy');
+
+
 // Admin routes
 Route::get('map', 'MapController@index');
 Route::get('users', function () {

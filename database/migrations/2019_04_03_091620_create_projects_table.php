@@ -18,6 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('user_id');
+            $table->string('repository')->nullable();
             $table->timestamps();
         });
     }
