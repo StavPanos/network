@@ -42,6 +42,8 @@ class DashboardController extends Controller
             }
         }
 
+        dd($posts);
+
         return view('dashboard', compact('posts'));
     }
 }
