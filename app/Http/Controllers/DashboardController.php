@@ -38,7 +38,7 @@ class DashboardController extends Controller
 
         foreach ($friends as $friend){
             foreach ($friend->posts as $post){
-                $posts[] = $post;
+                $posts->push($post);
             }
         }
 
