@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
@@ -42,7 +43,8 @@ class SocialController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'provider' => $provider,
-                'provider_id' => $user->id
+                'provider_id' => $user->id,
+                'email_verified_at' => Carbon::now()->toDateTimeString()
             ]);
         }
     }
