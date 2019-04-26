@@ -34,18 +34,27 @@ class SocialController extends Controller
             return $authUser;
         } else {
             $user_ = User::where('email', $user->email)->first();
-            if($user_)
-                User::destroy($user_->id);
-
-            return User::create([
-                'provider_token' => $user->token,
-                'avatar' => $user->avatar,
-                'name' => $user->name,
-                'email' => $user->email,
-                'provider' => $provider,
-                'provider_id' => $user->id,
-                'email_verified_at' => Carbon::now()->timestamp
-            ]);
+            if ($user_) {
+                return $user_->update([
+                    'provider_token' => $user->token,
+                    'avatar' => $user->avatar,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'provider' => $provider,
+                    'provider_id' => $user->id,
+                    'email_verified_at' => Carbon::now()->timestamp
+                ]);
+            } else {
+                return User::create([
+                    'provider_token' => $user->token,
+                    'avatar' => $user->avatar,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'provider' => $provider,
+                    'provider_id' => $user->id,
+                    'email_verified_at' => Carbon::now()->timestamp
+                ]);
+            }
         }
     }
 }
