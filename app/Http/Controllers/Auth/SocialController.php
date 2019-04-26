@@ -32,9 +32,9 @@ class SocialController extends Controller
         if ($authUser) {
             return $authUser;
         } else {
-            $user = User::where('email', $user->email)->first();
-            if($user)
-                User::destroy($user->id);
+//            $user = User::where('email', $user->email)->first();
+//            if($user)
+//                User::destroy($user->id);
 
             return User::create([
                 'provider_token' => $user->token,
