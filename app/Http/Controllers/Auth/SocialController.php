@@ -44,7 +44,7 @@ class SocialController extends Controller
                 'email' => $user->email,
                 'provider' => $provider,
                 'provider_id' => $user->id,
-                'email_verified_at' => Carbon::now()->toDateTimeString()
+                'email_verified_at' => Carbon::now()->timestamp
             ]);
         }
     }
