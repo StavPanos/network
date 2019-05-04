@@ -38,16 +38,18 @@
                         @endif
 
                         @forelse($friends as $friend)
-                            <div class="card mt-3">
-                                <div class="card-header">
-                                    <img src="{{$friend->avatar}}" alt="">
-                                    <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
-                                    posted  {{$friend->posts->first()->created_at->diffForHumans()}}
+                            @if($friend->posts)
+                                <div class="card mt-3">
+                                    <div class="card-header">
+                                        <img src="{{$friend->avatar}}" alt="">
+                                        <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
+                                        posted {{$friend->posts->first()->created_at->diffForHumans()}}
+                                    </div>
+                                    <div class="card-body">
+                                        {{$friend->posts->first()->content}}
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    {{$friend->posts->first()->content}}
-                                </div>
-                            </div>
+                            @endif
                         @empty
                             <p>No posts</p>
                         @endforelse
