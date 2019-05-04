@@ -14,7 +14,7 @@ class ProfileController extends Controller
         $planguages = Planguage::get();
         $client = new Client();
         $res = $client->get(auth()->user()->repos_url);
-        $repositories = $res->getBody()->json();
+        $repositories = $res->json();
         return view('profile.index', compact('posts', 'planguages', 'repositories'));
     }
 
