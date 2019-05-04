@@ -39,17 +39,17 @@
                         @forelse($friends as $friend)
                             @if($friend->posts->first())
                                 <div class="card mt-3">
+                                    <div class="card-header">
+                                        <img src="{{$friend->avatar}}" alt="">
+                                        <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
+                                        posted {{$friend->posts->first()->created_at->diffForHumans()}}
+                                    </div>
+
+                                    <div class="card-body">
+                                        {{$friend->posts->first()->content}}
+                                    </div>
+
                                     <div class="container">
-                                        <div class="card-header">
-                                            <img src="{{$friend->avatar}}" alt="">
-                                            <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
-                                            posted {{$friend->posts->first()->created_at->diffForHumans()}}
-                                        </div>
-
-                                        <div class="card-body">
-                                            {{$friend->posts->first()->content}}
-                                        </div>
-
                                         <form method="post" action="reply/create" class="mt-2">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
