@@ -9,6 +9,8 @@ class FriendController extends Controller
 {
     public function index()
     {
+        Notification::where('type', 'friend_request')->where('user_id', auth()->user()->id)->delete();
+
         // $recommended = User::where([
         //         ['country', '=', auth()->user()->country],
         //         ['programming_language', '=', auth()->user()->programming_language]

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Notification;
 use App\Models\Planguage;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -43,6 +44,7 @@ Route::post('profile/planguages', 'ProfileController@planguages');
 
 Route::get('populateLanguages', function(){
     Planguage::truncate();
+    Notification::truncate();
     $java = new Planguage();
 
     $java->name = 'JAVA';
