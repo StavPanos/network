@@ -5,6 +5,8 @@
         </h2>
     </div>
 
+    {{$repositories}}
+
     @foreach($repositories as $repo)
         <div class="card-body">
 
