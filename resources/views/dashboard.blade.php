@@ -38,7 +38,7 @@
                         @endif
 
                         @forelse($friends as $friend)
-                            @if($friend->posts)
+                            @if($friend->posts->first())
                                 <div class="card mt-3">
                                     <div class="card-header">
                                         <img src="{{$friend->avatar}}" alt="">
