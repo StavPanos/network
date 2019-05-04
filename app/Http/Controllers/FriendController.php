@@ -41,7 +41,7 @@ class FriendController extends Controller
             'title' => 'friend request from ' . auth()->user()->name
         ]);
 
-        $user->notifications->create(
+        $user->notifications->save(
             $notification
         );
 
