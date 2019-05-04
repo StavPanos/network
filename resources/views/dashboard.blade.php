@@ -66,9 +66,9 @@
                                             </span>
                                         @endif
 
-{{--                                        <div class="form-group">--}}
-{{--                                            <button type="submit" class="btn btn-info">Submit</button>--}}
-{{--                                        </div>--}}
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                        </div>
                                     </form>
 
 {{--                                    @foreach($friend->posts->first()->replies as $reply)--}}
