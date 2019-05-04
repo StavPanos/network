@@ -26,11 +26,12 @@ class ProfileController extends Controller
             }
         }
 
+        $user = User::findOrFail($userId);
+
         $client = new Client();
-        $res = $client->get(auth()->user()->repos_url);
+        $res = $client->get($user->repos_url);
         $repositories = json_decode($res->getBody());
 
-        $user = User::findOrFail($userId);
         return view('profile.view', compact('user', 'repositories'));
     }
 
