@@ -71,11 +71,11 @@
                                         </div>
                                     </form>
 
-{{--                                    @foreach($friend->posts->first()->replies as $reply)--}}
-{{--                                        {{$reply->user->name}} said <br>--}}
+                                    @foreach($friend->posts->first()->replies as $reply)
+                                        {{$reply->user->name}} said <br>
 
-{{--                                        {{$reply->content}}--}}
-{{--                                    @endforeach--}}
+                                        {{$reply->content}}
+                                    @endforeach
                                 </div>
                             @endif
                         @empty
