@@ -16,9 +16,11 @@
 
                 <div class="card-body">
                     <p>{{$repo->description}}</p>
-                    <p>{{$repo->updated_at}}</p>
+                    <p>
+                        last update at {{$repo->updated_at->diffForHumans()}}</p>
                 </div>
             </div>
+            <br>
         @endforeach
     </div>
 
