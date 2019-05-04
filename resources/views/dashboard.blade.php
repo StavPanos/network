@@ -49,7 +49,7 @@
                                         {{$friend->posts->first()->content}}
                                     </div>
 
-                                    <div class="container">
+                                    <div class="container repos">
                                         <form method="post" action="reply/create" class="mt-2">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
@@ -76,8 +76,8 @@
                                         @foreach($friend->posts->first()->replies as $reply)
                                             <div class="card">
                                                 <div class="card-header">
-                                                        <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}} </a>
-                                                        commented {{$reply->created_at->diffForHumans()}}
+                                                        <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}}</a>
+                                                         commented {{$reply->created_at->diffForHumans()}}
 
                                                     <form method="post" action="reply/delete" class="mt-2">
                                                         {{csrf_field()}}
