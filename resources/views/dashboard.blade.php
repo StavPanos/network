@@ -53,30 +53,30 @@
                                         {{csrf_field()}}
 {{--                                        <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">--}}
 
-                                        <div class="form-group">
-                                            <label for="reply">
-                                                Add a reply
-                                            </label>
-                                            <textarea name="content" class="form-control" rows="2"
-                                                      id="comment"></textarea>
-                                        </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <label for="reply">--}}
+{{--                                                Add a reply--}}
+{{--                                            </label>--}}
+{{--                                            <textarea name="content" class="form-control" rows="2"--}}
+{{--                                                      id="comment"></textarea>--}}
+{{--                                        </div>--}}
 
-                                        @if ($errors->has('content'))
-                                            <span class="invalid-" role="alert">
-                                                <strong>{{ $errors->first('content') }}</strong>
-                                            </span>
-                                        @endif
+{{--                                        @if ($errors->has('content'))--}}
+{{--                                            <span class="invalid-" role="alert">--}}
+{{--                                                <strong>{{ $errors->first('content') }}</strong>--}}
+{{--                                            </span>--}}
+{{--                                        @endif--}}
 
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </div>
+{{--                                        <div class="form-group">--}}
+{{--                                            <button type="submit" class="btn btn-info">Submit</button>--}}
+{{--                                        </div>--}}
                                     </form>
 
-                                    @foreach($friend->posts->first()->replies as $reply)
-                                        {{$reply->user->name}} said <br>
+{{--                                    @foreach($friend->posts->first()->replies as $reply)--}}
+{{--                                        {{$reply->user->name}} said <br>--}}
 
-                                        {{$reply->content}}
-                                    @endforeach
+{{--                                        {{$reply->content}}--}}
+{{--                                    @endforeach--}}
                                 </div>
                             @endif
                         @empty
