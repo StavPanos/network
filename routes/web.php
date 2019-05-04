@@ -40,6 +40,8 @@ Route::post('project/create', 'ProjectController@create');
 Route::post('project/delete', 'ProjectController@destroy');
 
 
+Route::post('reply/create', 'ReplyController@create');
+
 Route::post('profile/planguages', 'ProfileController@planguages');
 
 Route::get('populateLanguages', function(){

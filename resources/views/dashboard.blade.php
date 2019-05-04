@@ -48,6 +48,28 @@
                                     <div class="card-body">
                                         {{$friend->posts->first()->content}}
                                     </div>
+
+                                    <form method="post" action="reply/create" class="mt-5">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="{{$post->id}}">
+
+                                        <div class="form-group">
+                                            <label for="reply">
+                                                Add a reply
+                                            </label>
+                                            <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
+                                        </div>
+
+                                        @if ($errors->has('content'))
+                                            <span class="invalid-" role="alert">
+                                                <strong>{{ $errors->first('content') }}</strong>
+                                            </span>
+                                        @endif
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                        </div>
+                                    </form>
                                 </div>
                             @endif
                         @empty
