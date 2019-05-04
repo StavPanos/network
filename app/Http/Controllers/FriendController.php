@@ -55,7 +55,7 @@ class FriendController extends Controller
 
     public function friends()
     {
-        $friends = auth()->user()->friends;
+        $friends = auth()->user()->getFriends();
 
         return view('profile.friends', compact('friends'));
     }
