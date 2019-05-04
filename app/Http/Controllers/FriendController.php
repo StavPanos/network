@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notification;
 use App\Models\User;
 
 class FriendController extends Controller
@@ -32,7 +33,17 @@ class FriendController extends Controller
 
     public function connect()
     {
-        auth()->user()->befriend(User::find(request()->id));
+        $user = User::findOrFail(request()->id);
+
+        auth()->user()->befriend($user);
+
+        $notification = new Notification([
+            'title' => 'friend request from ' . auth()->user()->name
+        ]);
+
+        $user->notifications->create(
+            $notification
+        );
 
         return back()->with('success', 'Friend Request sent');
     }

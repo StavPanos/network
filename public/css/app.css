@@ -18557,3 +18557,7 @@ nav {
   overflow-y: scroll;
 }
 
+.dropdown-menu {
+  min-width: 100%;
+}
+
