@@ -37,22 +37,15 @@
                             </div>
                         @endif
 
-                        @forelse($posts as $post)
+                        @forelse($friends as $friend)
                             <div class="card mt-3">
                                 <div class="card-header">
-                                    <img src="{{$post->user->avatar}}" alt="">
-                                    <a class="link" href="profile/{{$post->user->id}}">{{$post->user->name}}</a>
-                                    posted  {{$post->created_at->diffForHumans()}}
-                                    <form action="/post/delete" method="post" class="d-inline">
-                                        {{csrf_field()}}
-                                        <input type="hidden" name="post_id" value="{{$post->id}}">
-                                        <button type="submit" class="ml-3 btn btn-link">
-                                            <i class="fa fa-trash"></i>
-                                        </button>
-                                    </form>
+                                    <img src="{{$friend->avatar}}" alt="">
+                                    <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
+                                    posted  {{$friend->posts->first()->created_at->diffForHumans()}}
                                 </div>
                                 <div class="card-body">
-                                    {{$post->content}}
+                                    {{$friend->posts->first()->content}}
                                 </div>
                             </div>
                         @empty
