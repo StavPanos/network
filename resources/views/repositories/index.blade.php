@@ -10,7 +10,7 @@
             <div class="card">
                 <div class="card-header">
                     <h5>
-                        {{$repo->name}}
+                        <a target="_blank" href="{{$repo->html_url}}">{{$repo->name}}</a>
                     </h5>
                 </div>
 
