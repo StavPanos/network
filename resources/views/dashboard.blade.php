@@ -49,28 +49,30 @@
                                         {{$friend->posts->first()->content}}
                                     </div>
 
-                                    <form method="post" action="reply/create" class="mt-5">
-                                        {{csrf_field()}}
-                                        <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
+                                    <div class="container">
+                                        <form method="post" action="reply/create" class="mt-2">
+                                            {{csrf_field()}}
+                                            <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
 
-                                        <div class="form-group">
-                                            <label for="reply">
-                                                Add a reply
-                                            </label>
-                                            <textarea name="content" class="form-control" rows="2"
-                                                      id="comment"></textarea>
-                                        </div>
+                                            <div class="form-group">
+                                                <label for="reply">
+                                                    Add a reply
+                                                </label>
+                                                <textarea name="content" class="form-control" rows="2"
+                                                          id="comment"></textarea>
+                                            </div>
 
-                                        @if($errors->has('content'))
-                                            <span class="invalid-" role="alert">
+                                            @if($errors->has('content'))
+                                                <span class="invalid-" role="alert">
                                                 <strong>{{ $errors->first('content') }}</strong>
                                             </span>
-                                        @endif
+                                            @endif
 
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                        </div>
-                                    </form>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-info">Submit</button>
+                                            </div>
+                                        </form>
+                                    </div>
 
                                     @foreach($friend->posts->first()->replies as $reply)
                                         <div class="card">
