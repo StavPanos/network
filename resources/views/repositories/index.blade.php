@@ -12,9 +12,9 @@
 
             <hr>
 
-            <h3>{{$repo['name']}}</h3>
-            <p>{{$repo['description']}}</p>
-            <p>{{$repo['updated_at']}}</p>
+            <h3>{{$repo->name}}</h3>
+            <p>{{$repo->description}}</p>
+            <p>{{$repo->updated_at}}</p>
 
         </div>
     @endforeach
