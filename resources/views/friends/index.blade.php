@@ -25,6 +25,12 @@
                                         <button class="btn btn-success w-100" type="submit">Accept</button>
                                     </form>
 
+                                    <form method="post" action="friend/decline">
+                                        {{csrf_field()}}
+                                        <input type="hidden" name="id" value="{{$request->id}}">
+                                        <button class="btn btn-success w-100" type="submit">Decline</button>
+                                    </form>
+
                                     <a href="profile/{{$request->id}}">
                                         {{$request->name}}
                                     </a>

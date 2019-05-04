@@ -7,16 +7,6 @@ use App\Models\User;
 
 class FriendController extends Controller
 {
-    public function getUsers($users)
-    {
-        $ids = [];
-        foreach ($users as $request) {
-            $ids[] = $request->sender_id;
-        }
-
-        return User::whereIn('id', $ids)->get();
-    }
-
     public function index()
     {
         // $recommended = User::where([
@@ -25,7 +15,7 @@ class FriendController extends Controller
         //     ])->get();
         $recommended = [];
 
-        $requests = $this->getUsers(auth()->user()->getFriendRequests());
+        $requests = auth()->user()->getFriendRequests();
         $friends = auth()->user()->getFriends();
 
         return view('friends.index', compact('recommended', 'requests', 'friends'));
@@ -63,6 +53,15 @@ class FriendController extends Controller
         auth()->user()->acceptFriendRequest($user);
 
         return back()->with('success', 'Friend Accepted');
+    }
+
+    public function decline()
+    {
+        $user = User::find(request()->id);
+
+        auth()->user()->denyFriendRequest($user);
+
+        return back()->with('success', 'Friend Declined');
     }
 
     public function friends()
