@@ -9,10 +9,10 @@ const app = new Vue({
 });
 
 $(function () {
-    $('#example').barrating({
-        theme: 'fontawesome-stars'
-    });
+    // $('#example').barrating({
+    //     theme: 'fontawesome-stars'
+    // });
 
-    $('.multiple-select').formSelect();
+    // $('.multiple-select').formSelect();
 });
 

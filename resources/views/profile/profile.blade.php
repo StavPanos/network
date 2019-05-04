@@ -50,7 +50,6 @@
                     @include('profile.edit_planguages')
                 @endif
             @endif
-
         </div>
 
         <div class="card-body">
@@ -66,16 +65,6 @@
                             </li>
                         @endforeach
                     </ul>
-                </li>
-
-                <li class="list-group-item">
-                    <select id="example">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>
                 </li>
             </ul>
         </div>

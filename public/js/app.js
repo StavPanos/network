@@ -49053,11 +49053,10 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
-$(function () {
-  $('#example').barrating({
-    theme: 'fontawesome-stars'
-  });
-  $('.multiple-select').formSelect();
+$(function () {// $('#example').barrating({
+  //     theme: 'fontawesome-stars'
+  // });
+  // $('.multiple-select').formSelect();
 });
 
 /***/ }),
