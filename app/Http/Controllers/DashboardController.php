@@ -20,6 +20,8 @@ class DashboardController extends Controller
     {
         $friends = auth()->user()->friends;
 
+        dd($friends);
+
         return view('dashboard', compact('friends'));
     }
 }
