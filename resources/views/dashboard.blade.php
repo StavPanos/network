@@ -29,7 +29,6 @@
                         </form>
                     </div>
 
-
                     <div class="card-body">
                         @if (session('status'))
                             <div class="alert alert-success" role="alert">
@@ -45,6 +44,7 @@
                                         <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
                                         posted {{$friend->posts->first()->created_at->diffForHumans()}}
                                     </div>
+
                                     <div class="card-body">
                                         {{$friend->posts->first()->content}}
                                     </div>
@@ -57,10 +57,11 @@
                                             <label for="reply">
                                                 Add a reply
                                             </label>
-                                            <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
+                                            <textarea name="content" class="form-control" rows="2"
+                                                      id="comment"></textarea>
                                         </div>
 
-                                        @if ($errors->has('content'))
+                                        @if($errors->has('content'))
                                             <span class="invalid-" role="alert">
                                                 <strong>{{ $errors->first('content') }}</strong>
                                             </span>
@@ -72,9 +73,15 @@
                                     </form>
 
                                     @foreach($friend->posts->first()->replies as $reply)
-                                        {{$reply->user->name}} said <br>
-
-                                        {{$reply->content}}
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h2>{{$reply->user->name}}
+                                                    said {{$reply->created_at->diffForHumans()}}</h2>
+                                            </div>
+                                            <div class="card-body">
+                                                {{$reply->content}}
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </div>
                             @endif
