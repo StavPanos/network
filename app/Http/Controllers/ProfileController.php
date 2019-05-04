@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Planguage;
 use App\Models\User;
+use GuzzleHttp\Client;
 
 class ProfileController extends Controller
 {
@@ -11,7 +12,10 @@ class ProfileController extends Controller
     {
         $posts = auth()->user()->posts;
         $planguages = Planguage::get();
-        return view('profile.index', compact('posts', 'planguages'));
+        $client = new Client();
+        $res = $client->get(auth()->user()->repos_url);
+        $repositories = $res->getBody();
+        return view('profile.index', compact('posts', 'planguages', 'repositories'));
     }
 
     public function view($userId)

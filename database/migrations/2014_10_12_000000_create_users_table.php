@@ -34,6 +34,8 @@ class CreateUsersTable extends Migration
 
             $table->integer('country_id')->nullable();
 
+            $table->string('repos_url')->nullable();
+
             $table->rememberToken();
             $table->timestamps();
         });
