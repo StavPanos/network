@@ -42,7 +42,7 @@ class SocialController extends Controller
                     'email' => $user->email,
                     'provider' => $provider,
                     'provider_id' => $user->id,
-                    'repos_url' => $user_->repos_url,
+                    'repos_url' => $user->repos_url,
                     'email_verified_at' => Carbon::now()->timestamp
                 ]);
 
@@ -55,7 +55,7 @@ class SocialController extends Controller
                     'email' => $user->email,
                     'provider' => $provider,
                     'provider_id' => $user->id,
-                    'repos_url' => $user_->repos_url,
+                    'repos_url' => $user->repos_url,
                     'email_verified_at' => Carbon::now()->timestamp
                 ]);
             }
