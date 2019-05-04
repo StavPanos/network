@@ -45,6 +45,12 @@
     <div class="card">
         <div class="card-header">
             Technology
+            @if(auth()->check())
+                @if(auth()->user()->id == $user->id)
+                    @include('profile.edit_planguages')
+                @endif
+            @endif
+
         </div>
 
         <div class="card-body">

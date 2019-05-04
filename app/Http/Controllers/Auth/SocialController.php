@@ -30,6 +30,8 @@ class SocialController extends Controller
     {
         $authUser = User::where('provider_id', $user->id)->first();
 
+        dd($user);
+
         if ($authUser) {
             return $authUser;
         } else {

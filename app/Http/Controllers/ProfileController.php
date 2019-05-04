@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Planguage;
 use App\Models\User;
 
 class ProfileController extends Controller
@@ -9,7 +10,8 @@ class ProfileController extends Controller
     public function index()
     {
         $posts = auth()->user()->posts;
-        return view('profile.index', compact('posts'));
+        $planguages = Planguage::get();
+        return view('profile.index', compact('posts', 'planguages'));
     }
 
     public function view($userId)
@@ -47,6 +49,15 @@ class ProfileController extends Controller
         auth()->user()->name = request('name');
         auth()->user()->bio = request('bio');
         auth()->user()->save();
+
+        return back();
+    }
+
+    public function planguages()
+    {
+        $languages = request('planguages');
+
+        auth()->user()->planguages()->sync($languages, true);
 
         return back();
     }

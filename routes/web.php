@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Planguage;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -37,6 +38,23 @@ Route::post('profile/edit', 'ProfileController@update');
 Route::post('project/create', 'ProjectController@create');
 Route::post('project/delete', 'ProjectController@destroy');
 
+
+Route::post('profile/planguages', 'ProfileController@planguages');
+
+Route::get('populateLanguages', function(){
+    Planguage::truncate();
+    $java = new Planguage();
+
+    $java->name = 'JAVA';
+
+    $java->save();
+
+    $python = new Planguage();
+
+    $python->name = 'PYTHON';
+
+    $python->save();
+});
 
 // Admin routes
 Route::get('map', 'MapController@index');

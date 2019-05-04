@@ -12,4 +12,7 @@ $(function () {
     $('#example').barrating({
         theme: 'fontawesome-stars'
     });
+
+    $('.multiple-select').formSelect();
 });
+
