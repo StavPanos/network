@@ -28,14 +28,16 @@ class FriendController extends Controller
 
         auth()->user()->befriend($user);
 
-        $notification = new Notification([
-            'title' => 'friend request from ' . auth()->user()->name,
-            'type' => 'friend_request'
-        ]);
+        if (!Notification::where('title', 'friend request from ' . auth()->user()->name)->first()) {
+            $notification = new Notification([
+                'title' => 'friend request from ' . auth()->user()->name,
+                'type' => 'friend_request'
+            ]);
 
-        $user->notifications()->save(
-            $notification
-        );
+            $user->notifications()->save(
+                $notification
+            );
+        }
 
         return back()->with('success', 'Friend Request sent');
     }
