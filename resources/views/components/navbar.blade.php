@@ -28,7 +28,7 @@
 
                     <li class="nav-item dropdown">
                         @if(count(auth()->user()->notifications) == 0)
-                            <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a id="d" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bell"></i>
                             </a>
