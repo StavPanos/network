@@ -51,7 +51,7 @@
 
                                     <form method="post" action="reply/create" class="mt-5">
                                         {{csrf_field()}}
-                                        <input type="hidden" name="{{$post->id}}">
+                                        <input type="hidden" name="{{$friend->posts->first()->id}}">
 
                                         <div class="form-group">
                                             <label for="reply">
@@ -72,7 +72,7 @@
                                         </div>
                                     </form>
 
-                                    @foreach($post->replies as $reply)
+                                    @foreach($friend->posts->first()->replies as $reply)
                                         {{$reply->user->name}} said <br>
 
                                         {{$reply->content}}
