@@ -25,7 +25,7 @@ class FriendController extends Controller
         $recommended = [];
 
         $requests = $this->getUsers(auth()->user()->getFriendRequests());
-        $friends = $this->getUsers(auth()->user()->getFriends());
+        $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
 
         return view('friends.index', compact('recommended', 'requests', 'friends'));
     }
