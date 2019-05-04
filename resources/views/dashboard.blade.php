@@ -75,8 +75,8 @@
                                     @foreach($friend->posts->first()->replies as $reply)
                                         <div class="card">
                                             <div class="card-header">
-                                                <h2>{{$reply->user->name}}
-                                                    said {{$reply->created_at->diffForHumans()}}</h2>
+                                                <h5>{{$reply->user->name}}
+                                                    commented {{$reply->created_at->diffForHumans()}}</h5>
                                             </div>
                                             <div class="card-body">
                                                 {{$reply->content}}
