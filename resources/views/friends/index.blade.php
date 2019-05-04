@@ -32,7 +32,7 @@
                                     </form>
 
                                     <a href="profile/{{$request->id}}">
-                                        {{$request->name}}
+                                        {{$request->user->name}}
                                     </a>
                                 </li>
                             @endforeach
