@@ -5,7 +5,9 @@
         <div class="row justify-content-center">
             @include('profile.profile', ['user' => $user])
             <div class="col-md-6">
-                @include('repositories.index', ['user' => $user])
+                @if(count($repositories) != 0)
+                    @include('repositories.index', ['user' => $user])
+                @endif
                 <br>
                 @include('projects.projects', ['user'=>$user])
                 <br>
