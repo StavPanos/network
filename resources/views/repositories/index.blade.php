@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <p>{{$repo->description}}</p>
                     <p>
-                        last update at {{$repo->updated_at->diffForHumans()}}</p>
+                        last update at {{$repo->updated_at}}</p>
                 </div>
             </div>
             <br>
