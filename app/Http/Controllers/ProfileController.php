@@ -38,7 +38,7 @@ class ProfileController extends Controller
 
         if ($user->provider_token) {
             $client = new Client();
-            $res = $client->get(auth()->user()->repos_url);
+            $res = $client->get($user->repos_url);
             $repositories = json_decode($res->getBody());
         }
 
