@@ -12,7 +12,7 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\Models\User')->orderBy('created_at', 'ASC');
+        return $this->belongsTo('App\Models\User')->orderBy('created_at', 'DESC');
     }
 
     public function replies()
