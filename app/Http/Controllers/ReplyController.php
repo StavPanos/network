@@ -8,7 +8,7 @@ use App\Models\Reply;
 class ReplyController extends Controller
 {
     public function create(){
-        $post = Post::find(request()->post_id);
+        $post = Post::find(request('post_id'));
 
         $reply = new Reply();
 
