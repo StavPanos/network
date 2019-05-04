@@ -4,19 +4,24 @@
             REPOSITORIES
         </h2>
     </div>
+    <div class="card-body">
 
-{{--    {{$repositories}}--}}
+        @foreach($repositories as $repo)
+            <div class="card">
+                <div class="card-header">
+                    <h5>
+                        {{$repo->name}}
+                    </h5>
+                </div>
 
+                <div class="card-body">
+                    <hr>
 
-        <div class="card-body">
-
-            <hr>
-            @foreach($repositories as $repo)
-
-            <h3>{{$repo->name}}</h3>
-            <p>{{$repo->description}}</p>
-            <p>{{$repo->updated_at}}</p>
-@endforeach
-        </div>
+                    <p>{{$repo->description}}</p>
+                    <p>{{$repo->updated_at}}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
 </div>
