@@ -51,7 +51,7 @@
 
                                     <form method="post" action="reply/create" class="mt-5">
                                         {{csrf_field()}}
-                                        <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
+{{--                                        <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">--}}
 
                                         <div class="form-group">
                                             <label for="reply">
