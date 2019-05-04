@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">Connections</div>
                     <div class="card-body">
-                        @include('components.userlist', ['users'=>$friends])
+                        @include('friends.userlist', ['users' => $friends])
                     </div>
                 </div>
             </div>
