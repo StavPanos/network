@@ -26,7 +26,7 @@ class ReplyController extends Controller
     {
         $reply = Reply::find(request()->id);
 
-        $reply->destroy();
+        Reply::destroy($reply);
 
         return back();
     }
