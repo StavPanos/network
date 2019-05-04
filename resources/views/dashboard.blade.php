@@ -76,8 +76,8 @@
                                         @foreach($friend->posts->first()->replies as $reply)
                                             <div class="card">
                                                 <div class="card-header">
-                                                    <h5>{{$reply->user->name}}
-                                                        commented {{$reply->created_at->diffForHumans()}}</h5>
+                                                        <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}} </a>
+                                                        commented {{$reply->created_at->diffForHumans()}}
 
                                                     <form method="post" action="reply/delete" class="mt-2">
                                                         {{csrf_field()}}
