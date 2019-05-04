@@ -12,9 +12,15 @@ class ProfileController extends Controller
     {
         $posts = auth()->user()->posts;
         $planguages = Planguage::get();
-        $client = new Client();
-        $res = $client->get(auth()->user()->repos_url);
-        $repositories = json_decode($res->getBody());
+
+        $repositories = [];
+
+        if (auth()->user()->provider_token) {
+            $client = new Client();
+            $res = $client->get(auth()->user()->repos_url);
+            $repositories = json_decode($res->getBody());
+        }
+
         return view('profile.index', compact('posts', 'planguages', 'repositories'));
     }
 
@@ -28,9 +34,13 @@ class ProfileController extends Controller
 
         $user = User::findOrFail($userId);
 
-        $client = new Client();
-        $res = $client->get($user->repos_url);
-        $repositories = json_decode($res->getBody());
+        $repositories = [];
+
+        if ($user->provider_token) {
+            $client = new Client();
+            $res = $client->get(auth()->user()->repos_url);
+            $repositories = json_decode($res->getBody());
+        }
 
         return view('profile.view', compact('user', 'repositories'));
     }
