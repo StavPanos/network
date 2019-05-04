@@ -7,7 +7,8 @@ use App\Models\Reply;
 
 class ReplyController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         $post = Post::find(request()->post_id);
 
         $reply = new Reply();
@@ -17,6 +18,15 @@ class ReplyController extends Controller
         $reply->user_id = auth()->user()->id;
 
         $post->replies()->save($reply);
+
+        return back();
+    }
+
+    public function destroy()
+    {
+        $reply = Reply::find(request()->id);
+
+        $reply->destroy();
 
         return back();
     }

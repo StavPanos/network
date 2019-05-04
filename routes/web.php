@@ -41,6 +41,7 @@ Route::post('project/delete', 'ProjectController@destroy');
 
 
 Route::post('reply/create', 'ReplyController@create');
+Route::post('reply/delete', 'ReplyController@destroy');
 
 Route::post('profile/planguages', 'ProfileController@planguages');
 

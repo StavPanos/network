@@ -79,6 +79,17 @@
                                             <div class="card-header">
                                                 <h5>{{$reply->user->name}}
                                                     commented {{$reply->created_at->diffForHumans()}}</h5>
+
+                                                <form method="post" action="reply/delete" class="mt-2">
+                                                    {{csrf_field()}}
+                                                    <input type="hidden" value="{{$reply->id}}" name="id">
+
+                                                    <div class="form-group">
+                                                        <button type="submit" class="btn btn-info">
+                                                            <i class="fa fa-trash"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
                                             </div>
                                             <div class="card-body">
                                                 {{$reply->content}}
