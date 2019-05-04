@@ -57,7 +57,8 @@
                                             <label for="reply">
                                                 Add a reply
                                             </label>
-                                            <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
+                                            <textarea name="content" class="form-control" rows="2"
+                                                      id="comment"></textarea>
                                         </div>
 
                                         @if ($errors->has('content'))
@@ -70,6 +71,12 @@
                                             <button type="submit" class="btn btn-info">Submit</button>
                                         </div>
                                     </form>
+
+                                    @foreach($post->replies as $reply)
+                                        {{$reply->user->name}} said <br>
+
+                                        {{$reply->content}}
+                                    @endforeach
                                 </div>
                             @endif
                         @empty
