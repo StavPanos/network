@@ -38,7 +38,8 @@ class FriendController extends Controller
         auth()->user()->befriend($user);
 
         $notification = new Notification([
-            'title' => 'friend request from ' . auth()->user()->name
+            'title' => 'friend request from ' . auth()->user()->name,
+            'type' => 'friend_request'
         ]);
 
         $user->notifications()->save(

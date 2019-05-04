@@ -22,7 +22,6 @@
                     </div>
                 @endif
 
-
                 <br>
 
                 <form method="post" action="friend/block">
