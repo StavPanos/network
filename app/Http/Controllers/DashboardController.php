@@ -18,7 +18,7 @@ class DashboardController extends Controller
 
     public function index()
     {
-        $friends = auth()->user()->friends;
+        $friends = auth()->user()->getFriends();
 
         dd($friends);
 
