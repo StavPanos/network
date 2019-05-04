@@ -29,9 +29,7 @@ class SocialController extends Controller
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('provider_id', $user->id)->first();
-
-        dd($user->user['repos_url']);
-
+        
         if ($authUser) {
             return $authUser;
         } else {
@@ -44,7 +42,7 @@ class SocialController extends Controller
                     'email' => $user->email,
                     'provider' => $provider,
                     'provider_id' => $user->id,
-                    'repos_url' => $user->repos_url,
+                    'repos_url' => $user->user['repos_url'],
                     'email_verified_at' => Carbon::now()->timestamp
                 ]);
 
@@ -57,7 +55,7 @@ class SocialController extends Controller
                     'email' => $user->email,
                     'provider' => $provider,
                     'provider_id' => $user->id,
-                    'repos_url' => $user->repos_url,
+                    'repos_url' => $user->user['repos_url'],
                     'email_verified_at' => Carbon::now()->timestamp
                 ]);
             }
