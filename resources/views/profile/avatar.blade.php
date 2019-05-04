@@ -1,5 +1,5 @@
 @if($user->avatar)
-    @if(!$user->provider_token)
+    @if($user->custom_avatar)
         <img src="/storage/avatars/{{$user->avatar}}" class="w-25">
     @else
         <img src="{{$user->avatar}}" class="w-25">

@@ -43,6 +43,8 @@ class ProfileController extends Controller
 
         $user = auth()->user();
 
+        $user->custom_avatar = true;
+
         $avatarName = $user->id . '_avatar' . time() . '.' . request()->avatar->getClientOriginalExtension();
 
         request()->avatar->storeAs('avatars', $avatarName);

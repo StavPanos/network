@@ -36,6 +36,8 @@ class CreateUsersTable extends Migration
 
             $table->string('repos_url')->nullable();
 
+            $table->boolean('custom_avatar')->default(false);
+
             $table->rememberToken();
             $table->timestamps();
         });
