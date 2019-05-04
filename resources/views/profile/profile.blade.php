@@ -42,6 +42,8 @@
 
     <br>
 
+    {{$repositories}}
+
     <div class="card">
         <div class="card-header">
             Technology
