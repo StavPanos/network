@@ -7,8 +7,8 @@
             <div class="col-md-6">
                 @if(count($repositories) != 0)
                     @include('repositories.index', ['user' => $user])
+                    <br>
                 @endif
-                <br>
                 @include('projects.projects', ['user'=>$user])
                 <br>
                 @include('posts.posts', ['user'=>$user])
