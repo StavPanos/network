@@ -5,7 +5,7 @@
         </h2>
     </div>
 
-    {{$repositories}}
+{{--    {{$repositories}}--}}
 
     @foreach($repositories as $repo)
         <div class="card-body">
