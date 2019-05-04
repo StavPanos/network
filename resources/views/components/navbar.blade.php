@@ -33,21 +33,21 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                             @foreach(auth()->user()->notifications as $notification)
                                 <a class="dropdown-item" href="/home">
-                                    {{$request->name}}
-                                    <form method="post" action="friend/accept">
-                                        {{csrf_field()}}
-                                        <input type="hidden" name="id" value="{{$request->id}}">
-                                        <button type="submit">
-                                            <i class="fa fa-check"></i>
-                                        </button>
-                                    </form>
+                                    {{$notification->title}}
+{{--                                    <form method="post" action="friend/accept">--}}
+{{--                                        {{csrf_field()}}--}}
+{{--                                        <input type="hidden" name="id" value="{{$request->id}}">--}}
+{{--                                        <button type="submit">--}}
+{{--                                            <i class="fa fa-check"></i>--}}
+{{--                                        </button>--}}
+{{--                                    </form>--}}
 
-                                    <form method="post" action="friend/decline">
-                                        {{csrf_field()}}
-                                        <button type="submit">
-                                            <i class="fa fa-window-close"></i>
-                                        </button>
-                                    </form>
+{{--                                    <form method="post" action="friend/decline">--}}
+{{--                                        {{csrf_field()}}--}}
+{{--                                        <button type="submit">--}}
+{{--                                            <i class="fa fa-window-close"></i>--}}
+{{--                                        </button>--}}
+{{--                                    </form>--}}
                                 </a>
                             @endforeach
                         </div>
