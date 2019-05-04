@@ -25,7 +25,7 @@ class FriendController extends Controller
         $recommended = [];
 
         $requests = $this->getUsers(auth()->user()->getFriendRequests());
-        $friends = $this->getUsers(auth()->user()->getAcceptedFriendships());
+        $friends = $this->getUsers(auth()->user()->getFriends());
 
         return view('friends.index', compact('recommended', 'requests', 'friends'));
     }
@@ -55,7 +55,7 @@ class FriendController extends Controller
 
     public function friends()
     {
-        $friends = auth()->user()->getFriends();
+        $friends = auth()->user()->friends;
 
         return view('profile.friends', compact('friends'));
     }
