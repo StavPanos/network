@@ -5,6 +5,8 @@
         <div class="row justify-content-center">
             @include('profile.profile', ['user' => auth()->user()])
             <div class="col-md-8">
+                @include('repositories.index', ['user' => auth()->user()])
+                <br>
                 @include('projects.projects', ['user'=>auth()->user()])
                 <br>
                 @include('posts.posts', ['user' => auth()->user()])
