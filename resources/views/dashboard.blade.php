@@ -95,6 +95,7 @@
                                                 {{$reply->content}}
                                             </div>
                                         </div>
+                                        <br>
                                     @endforeach
                                 </div>
                             @endif
