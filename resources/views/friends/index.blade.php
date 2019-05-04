@@ -21,13 +21,13 @@
                                 <li class="list-group-item">
                                     <form method="post" action="friend/accept">
                                         {{csrf_field()}}
-                                        <input type="hidden" name="id" value="{{$request->id}}">
+                                        <input type="hidden" name="id" value="{{$request->sender->id}}">
                                         <button class="btn btn-success w-100" type="submit">Accept</button>
                                     </form>
 
                                     <form method="post" action="friend/decline">
                                         {{csrf_field()}}
-                                        <input type="hidden" name="id" value="{{$request->id}}">
+                                        <input type="hidden" name="id" value="{{$request->sender->id}}">
                                         <button class="btn btn-success w-100" type="submit">Decline</button>
                                     </form>
 
