@@ -24,9 +24,7 @@ class ReplyController extends Controller
 
     public function destroy()
     {
-        $reply = Reply::find(request()->id);
-
-        Reply::destroy($reply);
+        Reply::destroy(request()->id);
 
         return back();
     }
