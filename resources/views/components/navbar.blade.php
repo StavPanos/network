@@ -27,19 +27,25 @@
                     </li>
 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-bell"></i>
-                        </a>
+                        @if(count(auth()->user()->notifications) == 0)
+                            <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                            </a>
+                        @else
+                            <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell notification"></i>
+                            </a>
+                        @endif
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
                             @foreach(auth()->user()->notifications as $notification)
-                                <a class="dropdown-item" href="/home">
-                                    {{$notification->title}}
-                                    @if($notification->type == 'friend_request')
-                                        <a href="/connections">{{$notification->title}}</a>
-                                    @endif
-                                </a>
+                                @if($notification->type == 'friend_request')
+                                    <a class="dropdown-item" href="/connections">
+                                        {{$notification->title}}
+                                    </a>
+                                @endif
                             @endforeach
                         </div>
                     </li>

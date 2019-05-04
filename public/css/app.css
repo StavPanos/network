@@ -18561,3 +18561,7 @@ nav {
   min-width: 100%;
 }
 
+.notification {
+  color: orangered;
+}
+
