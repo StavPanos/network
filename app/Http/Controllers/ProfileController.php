@@ -26,8 +26,12 @@ class ProfileController extends Controller
             }
         }
 
+        $client = new Client();
+        $res = $client->get(auth()->user()->repos_url);
+        $repositories = json_decode($res->getBody());
+
         $user = User::findOrFail($userId);
-        return view('profile.view', compact('user'));
+        return view('profile.view', compact('user', 'repositories'));
     }
 
     public function update_avatar()
