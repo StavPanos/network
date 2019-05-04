@@ -59,5 +59,5 @@ Route::get('populateLanguages', function(){
 // Admin routes
 Route::get('map', 'MapController@index');
 Route::get('users', function () {
-    return User::with('planguages', 'friends')->get();
+    return User::with('planguages', 'friends', 'notifications')->get();
 });
