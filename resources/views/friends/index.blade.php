@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="card-body">
-                        @include('components.userlist', ['users'=>$recommended])
+                        @include('friends.userlist', ['users'=>$recommended])
                     </div>
                 </div>
             </div>
