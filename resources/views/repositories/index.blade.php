@@ -4,7 +4,7 @@
             REPOSITORIES
         </h2>
     </div>
-    <div class="card-body">
+    <div class="card-body repos">
 
         @foreach($repositories as $repo)
             <div class="card">
@@ -15,8 +15,6 @@
                 </div>
 
                 <div class="card-body">
-                    <hr>
-
                     <p>{{$repo->description}}</p>
                     <p>{{$repo->updated_at}}</p>
                 </div>
