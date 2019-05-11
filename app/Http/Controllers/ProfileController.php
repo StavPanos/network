@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProfile;
 use App\Models\Planguage;
 use App\Models\User;
 use GuzzleHttp\Client;
@@ -65,10 +66,13 @@ class ProfileController extends Controller
         return back()->with('success', 'You have successfully upload image.');
     }
 
-    public function update()
+    public function update(UpdateProfile $request)
     {
-        auth()->user()->name = request('name');
-        auth()->user()->bio = request('bio');
+        $request->validated();
+
+        auth()->user()->name = $request->name;
+        auth()->user()->bio = $request->bio;
+        auth()->user()->country_id = $request->country_id;
         auth()->user()->save();
 
         return back()->with('success', 'Success, your profile details have been updated');

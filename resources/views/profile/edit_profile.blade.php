@@ -36,6 +36,13 @@
 
                     <br>
 
+                    <label for="country">Country</label>
+                    <select name="country_id">
+                        <option value="1" >Greece</option>
+                    </select>
+
+                    <br>
+
                     <label for="name">Bio</label>
                     <textarea name="bio" value="{{$user->bio}}" class="form-control"></textarea>
 
