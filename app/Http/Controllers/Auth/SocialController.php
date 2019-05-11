@@ -28,9 +28,6 @@ class SocialController extends Controller
 
     public function findOrCreateUser($user, $provider)
     {
-
-        dd($user);
-
         $authUser = User::where('provider_id', $user->id)->first();
 
         if ($authUser) {
@@ -38,12 +35,12 @@ class SocialController extends Controller
         } else {
             $user_ = User::where('email', $user->email)->first();
 
-            if($provider=='github'){
+            if($provider == 'github'){
                 $repos_url = $user->user['repos_url'];
             }
 
-            if($provider=='bitbucket'){
-                $repos_url = $user->user['repos_url'];
+            if($provider == 'bitbucket'){
+                $repos_url = $user->links['repositories'];
             }
 
             if ($user_) {
