@@ -4,15 +4,11 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import "~daemonite-material/assets/scss/material";
-
-@import "~jquery-bar-rating/dist/themes/fontawesome-stars.css";
-
 // Font awesome
 @import "~font-awesome/scss/font-awesome";
 
+// Bootstrap
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 // Custom styles
 @import "main";
-
-
