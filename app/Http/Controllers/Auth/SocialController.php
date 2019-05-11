@@ -22,7 +22,9 @@ class SocialController extends Controller
         $user = Socialite::driver($provider)->user();
 
         $authUser = $this->findOrCreateUser($user, $provider);
+
         Auth::login($authUser, true);
+
         return redirect($this->redirectTo);
     }
 
@@ -52,22 +54,22 @@ class SocialController extends Controller
     {
         $authUser = User::where('provider_id', $user->id)->first();
 
-        if ($authUser) {
-            return $authUser;
-        } else {
-            $user_ = User::where('email', $user->email)->first();
-            
-            if ($user_) {
-                $user_->update(
+        if (!$authUser) {
+            $authUser = User::where('email', $user->email)->first();
+
+            if ($authUser) {
+                $authUser->update(
                     $this->setUser($user, $provider)
                 );
 
-                return $user_;
-            } else {
-                return User::create(
-                    $this->setUser($user, $provider)
-                );
+                return $authUser;
             }
+
+            return User::create(
+                $this->setUser($user, $provider)
+            );
         }
+
+        return $authUser;
     }
 }
