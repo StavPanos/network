@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <div class="card">
+    <div class="card height-scroll">
         <div class="card-header">
             @include('profile.avatar', ['user'=>$user])
             @if(auth()->check())
@@ -40,7 +40,7 @@
         </div>
     </div>
 
-    <div class="card mt-3">
+    <div class="card height-scroll mt-3">
         <div class="card-header">
             Technology
             @if(auth()->check())

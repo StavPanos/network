@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card height-scroll">
     <div class="card-header">
             Projects
 

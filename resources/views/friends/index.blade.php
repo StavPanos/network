@@ -13,9 +13,9 @@
             </div>
 
             <div class="col-md-6">
-                <div class="card">
+                <div class="card height-scroll">
                     <div class="card-header">Requests</div>
-                    <div class="card-body repos">
+                    <div class="card-body">
                         <ul class="list-group">
                             @foreach($requests as $request)
                                 <li class="list-group-item">
@@ -44,7 +44,7 @@
 
         <div class="row mt-3">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card height-scroll">
                     <div class="card-header">
                         Recommendations
                     </div>

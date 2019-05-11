@@ -1,4 +1,4 @@
-<div class="card mt-3">
+<div class="card height-scroll mt-3">
     <div class="card-header">
         Add post
     </div>
