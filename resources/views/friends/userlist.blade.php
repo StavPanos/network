@@ -1,4 +1,4 @@
-<ul class="list-group" style="height: 300px;overflow-y: scroll;">
+<ul class="list-group">
     @foreach($users as $user)
         <li class="list-group-item">
             @include('profile.avatar', ['user' => $user])

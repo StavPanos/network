@@ -10,7 +10,6 @@
                     <br>
                 @endif
                 @include('projects.projects', ['user'=>auth()->user()])
-                <br>
                 @include('posts.posts', ['user' => auth()->user()])
             </div>
         </div>

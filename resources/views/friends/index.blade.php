@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row justify-content-center">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">Connections</div>
-                    <div class="card-body">
+                    <div class="card-body repos">
                         @include('friends.userlist', ['users' => $friends])
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">Requests</div>
-                    <div class="card-body">
+                    <div class="card-body repos">
                         <ul class="list-group">
                             @foreach($requests as $request)
                                 <li class="list-group-item">
@@ -39,10 +39,11 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
+        </div>
 
-            <div class="col-md-4">
+        <div class="row mt-3">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         Recommendations

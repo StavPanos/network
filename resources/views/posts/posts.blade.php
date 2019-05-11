@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card mt-3">
     <div class="card-header">
-        Posts
+        Add post
     </div>
 
     @if(auth()->check())
@@ -12,38 +12,46 @@
                         <label for="comment">
                             Add post
                         </label>
-                        <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
+                        <textarea name="content" class="form-control" rows="4" id="comment"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-info">Submit</button>
+                        <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
                     </div>
                 </form>
             </div>
         @endif
     @endif
+</div>
 
-    @foreach($user->posts as $post)
-        <div class="card-body">
-            {{$post->created_at->diffForHumans()}}
+<div class="card mt-3">
+    <div class="card-header">
+        My posts
+    </div>
 
-            @if(auth()->check())
-                @if(auth()->user()->id == $user->id)
-                    <form action="/post/delete" method="post" class="d-inline">
-                        {{csrf_field()}}
-                        <input type="hidden" name="post_id" value="{{$post->id}}">
-                        <button type="submit" class="ml-3 btn btn-link">
-                            <i class="fa fa-trash text-black"></i>
-                        </button>
-                    </form>
+    <div class="card-body">
+        @foreach($user->posts as $post)
+            <div class="card-body">
+                {{$post->created_at->diffForHumans()}}
+
+                @if(auth()->check())
+                    @if(auth()->user()->id == $user->id)
+                        <form action="/post/delete" method="post" class="d-inline">
+                            {{csrf_field()}}
+                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                            <button type="submit" class="ml-3 btn btn-link">
+                                <i class="fa fa-trash text-black"></i>
+                            </button>
+                        </form>
+                    @endif
                 @endif
-            @endif
 
-            <hr>
+                <hr>
 
-            <p>
-                {{$post->content}}
-            </p>
-        </div>
-    @endforeach
+                <p>
+                    {{$post->content}}
+                </p>
+            </div>
+        @endforeach
+    </div>
 </div>
