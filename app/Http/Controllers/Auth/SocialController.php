@@ -26,6 +26,28 @@ class SocialController extends Controller
         return redirect($this->redirectTo);
     }
 
+    public function setUser($user, $provider)
+    {
+        if ($provider == 'github') {
+            $repos_url = $user->user['repos_url'];
+        }
+
+        if ($provider == 'bitbucket') {
+            $repos_url = $user->user['links']['repositories'];
+        }
+
+        return [
+            'provider_token' => $user->token,
+            'avatar' => $user->avatar,
+            'name' => $user->name,
+            'email' => $user->email,
+            'provider' => $provider,
+            'provider_id' => $user->id,
+            'repos_url' => $repos_url,
+            'email_verified_at' => Carbon::now()->timestamp
+        ];
+    }
+
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('provider_id', $user->id)->first();
@@ -34,39 +56,17 @@ class SocialController extends Controller
             return $authUser;
         } else {
             $user_ = User::where('email', $user->email)->first();
-
-            if($provider == 'github'){
-                $repos_url = $user->user['repos_url'];
-            }
-
-            if($provider == 'bitbucket'){
-                $repos_url = $user->user['links']['repositories'];
-            }
-
+            
             if ($user_) {
-                $user_->update([
-                    'provider_token' => $user->token,
-                    'avatar' => $user->avatar,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'provider' => $provider,
-                    'provider_id' => $user->id,
-                    'repos_url' => $repos_url,
-                    'email_verified_at' => Carbon::now()->timestamp
-                ]);
+                $user_->update(
+                    $this->setUser($user, $provider)
+                );
 
                 return $user_;
             } else {
-                return User::create([
-                    'provider_token' => $user->token,
-                    'avatar' => $user->avatar,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                    'provider' => $provider,
-                    'provider_id' => $user->id,
-                    'repos_url' => $user->user['repos_url'],
-                    'email_verified_at' => Carbon::now()->timestamp
-                ]);
+                return User::create(
+                    $this->setUser($user, $provider)
+                );
             }
         }
     }
