@@ -4,6 +4,9 @@
     </div>
     <div class="card-body">
         @if($user->provider == 'github')
+
+            Github
+
             @forelse($repositories as $repo)
                 <div class="card">
                     <div class="card-header">
@@ -30,6 +33,9 @@
         @endif
 
         @if($user->provider == 'bitbucket')
+
+            Bitbucket
+
             @forelse($repositories->values as $repo)
                 <div class="card">
                     <div class="card-header">
