@@ -58,7 +58,7 @@
                                                         <input type="hidden" value="{{$reply->id}}" name="id">
 
                                                         <div class="form-group">
-                                                            <button type="submit" class="btn btn-info">
+                                                            <button type="submit">
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </div>

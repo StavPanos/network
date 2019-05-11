@@ -1,11 +1,8 @@
 <div class="card">
     <div class="card-header">
-        <h2>
-            REPOSITORIES
-        </h2>
+        Repositories
     </div>
     <div class="card-body repos">
-
         @foreach($repositories as $repo)
             <div class="card">
                 <div class="card-header">
