@@ -11,9 +11,11 @@
                       id="comment"></textarea>
         </div>
 
-        @if($errors->has('reply_content'))
+        {{$errors}}
+
+        @if($errors->has('content'))
             <span class="invalid-" role="alert">
-                <strong>{{ $errors->first('reply_content') }}</strong>
+                <strong>{{ $errors->first('content') }}</strong>
             </span>
         @endif
 
