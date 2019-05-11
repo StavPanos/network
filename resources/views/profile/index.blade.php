@@ -7,7 +7,6 @@
             <div class="col-md-8">
                 @if(count($repositories) != 0)
                     @include('repositories.index', ['user' => auth()->user()])
-                    <br>
                 @endif
                 @include('projects.projects', ['user'=>auth()->user()])
                 @include('posts.posts', ['user' => auth()->user()])
