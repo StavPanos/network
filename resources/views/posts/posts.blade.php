@@ -36,20 +36,20 @@
                 <div class="card">
                     <div class="card-header">
                         {{$post->created_at->diffForHumans()}}
-                    </div>
-
-                    <div class="card-body">
                         @if(auth()->check())
                             @if(auth()->user()->id == $user->id)
                                 <form action="/post/delete" method="post" class="d-inline">
                                     {{csrf_field()}}
                                     <input type="hidden" name="post_id" value="{{$post->id}}">
-                                    <button type="submit" class="ml-3">
+                                    <button type="submit" class="ml-3 bg-transparent border-0">
                                         <i class="fa fa-trash"></i>
                                     </button>
                                 </form>
                             @endif
                         @endif
+                    </div>
+
+                    <div class="card-body">
                         {{$post->content}}
                     </div>
                 </div>
