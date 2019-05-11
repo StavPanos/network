@@ -2,22 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreReply;
 use App\Models\Post;
 use App\Models\Reply;
 
 class ReplyController extends Controller
 {
-    public function create()
+    public function create(StoreReply $reply)
     {
-        $post = Post::find(request()->post_id);
+        $post = Post::find($reply->post_id);
 
-        $reply = new Reply();
+        $reply_ = new Reply();
 
-        $reply->content = request()->content;
+        $reply_->content = $reply->content;
 
-        $reply->user_id = auth()->user()->id;
+        $reply_->user_id = auth()->user()->id;
 
-        $post->replies()->save($reply);
+        $post->replies()->save($reply_);
 
         return back();
     }
