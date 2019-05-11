@@ -3,7 +3,7 @@
         Repositories
     </div>
     <div class="card-body">
-        @foreach($repositories as $repo)
+        @forelse($repositories as $repo)
             <div class="card">
                 <div class="card-header">
                     <h5>
@@ -23,7 +23,10 @@
                 </div>
             </div>
             <br>
-        @endforeach
+        @empty
+            No repositories
+
+        @endforelse
     </div>
 
 </div>
