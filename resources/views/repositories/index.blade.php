@@ -1,7 +1,13 @@
 <div class="card height-scroll">
     <div class="card-header">
-        <img src="{{asset('images/github.png')}}" alt="">
-        Repositories
+        @if($user->provider == 'github')
+            <img src="{{asset('images/github.png')}}" alt="" style="width: 65px;">
+        @endif
+
+        @if($user->provider == 'bitbucket')
+            <img src="{{asset('images/bitbucket.png')}}" alt="" style="width: 65px;">
+        @endif
+        repositories
     </div>
 
     <div class="card-body">
