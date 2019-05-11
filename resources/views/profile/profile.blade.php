@@ -59,7 +59,7 @@
 
                     <ul class="list-group">
                         @foreach($user->planguages as $lang)
-                            <li class="list-item">
+                            <li class="list-group-item">
                                 {{$lang->name}}
                             </li>
                         @endforeach
