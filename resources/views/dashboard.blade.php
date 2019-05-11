@@ -23,7 +23,7 @@
                                         {{$friend->posts->first()->content}}
                                     </div>
 
-                                    <div class="container repos">
+                                    <div class="container height-scroll">
                                         <form method="post" action="reply/create" class="mt-2">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
@@ -53,12 +53,12 @@
                                                         <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}}</a>
                                                          commented {{$reply->created_at->diffForHumans()}}
 
-                                                    <form method="post" action="reply/delete" class="mt-2">
+                                                    <form method="post" action="reply/delete" class="mt-2 d-inline">
                                                         {{csrf_field()}}
                                                         <input type="hidden" value="{{$reply->id}}" name="id">
 
                                                         <div class="form-group">
-                                                            <button type="submit">
+                                                            <button type="submit" class="bg-transparent border-0">
                                                                 <i class="fa fa-trash"></i>
                                                             </button>
                                                         </div>
