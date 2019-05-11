@@ -9,14 +9,6 @@
             @endif
     </div>
 
-    @if($errors->any())
-        <div id="error-box">
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </div>
-    @endif
-
     @foreach($user->projects as $project)
         <div class="card-body">
             {{$project->created_at->diffForHumans()}}
