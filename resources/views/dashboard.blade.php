@@ -12,14 +12,14 @@
                     <div class="card-body">
                         @forelse($friends as $friend)
                             @if($friend->posts->first())
-                                <div class="card mt-3">
+                                <div class="card">
                                     <div class="card-header">
                                         <img src="{{$friend->avatar}}" alt="">
                                         <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
                                         posted {{$friend->posts->first()->created_at->diffForHumans()}}
                                     </div>
 
-                                    <div class="card-body">
+                                    <div class="card-body border-bottom">
                                         {{$friend->posts->first()->content}}
                                     </div>
 
