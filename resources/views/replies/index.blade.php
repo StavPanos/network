@@ -14,12 +14,12 @@
         @if($errors->has('content'))
             @if(count($errors->get('content'))==1)
                 <span class="invalid-" role="alert">
-                    <strong>{{ $errors->first('content') }}</strong>
+                    <strong class="text-danger">{{ $errors->first('content') }}</strong>
                 </span>
             @endif
         @endif
 
-        <div class="form-group">
+        <div class="form-group mt-3">
             <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
         </div>
     </form>
