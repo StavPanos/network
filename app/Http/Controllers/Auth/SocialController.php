@@ -29,7 +29,7 @@ class SocialController extends Controller
     public function findOrCreateUser($user, $provider)
     {
 
-        dd($user);
+        dd($provider);
 
         $authUser = User::where('provider_id', $user->id)->first();
 
@@ -37,6 +37,8 @@ class SocialController extends Controller
             return $authUser;
         } else {
             $user_ = User::where('email', $user->email)->first();
+            
+
             if ($user_) {
                 $user_->update([
                     'provider_token' => $user->token,
