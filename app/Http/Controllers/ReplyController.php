@@ -8,19 +8,21 @@ use App\Models\Reply;
 
 class ReplyController extends Controller
 {
-    public function create(StoreReply $reply)
+    public function create(StoreReply $request)
     {
-        $post = Post::find($reply->post_id);
+        $request->validated();
 
-        $reply_ = new Reply();
+        $post = Post::find($request->post_id);
 
-        $reply_->content = $reply->content;
+        $reply = new Reply();
 
-        $reply_->user_id = auth()->user()->id;
+        $reply->content = $request->content;
 
-        $post->replies()->save($reply_);
+        $reply->user_id = auth()->user()->id;
 
-        return back();
+        $post->replies()->save($reply);
+
+        return back()->with('success', 'Reply created successfully!');
     }
 
     public function destroy()
