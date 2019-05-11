@@ -23,7 +23,7 @@
                                         {{$friend->posts->first()->content}}
                                     </div>
 
-                                    <div class="container height-scroll">
+                                    <div class="container">
                                         <form method="post" action="reply/create" class="mt-2">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$friend->posts->first()->id}}" name="post_id">
@@ -48,7 +48,7 @@
                                         </form>
 
                                         @foreach($friend->posts->first()->replies as $reply)
-                                            <div class="card">
+                                            <div class="card height-scroll">
                                                 <div class="card-header">
                                                         <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}}</a>
                                                          commented {{$reply->created_at->diffForHumans()}}
