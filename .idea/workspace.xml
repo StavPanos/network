@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5474c01a-4bfc-45ce-9662-8cfff8069843" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/resources/sass/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/replies/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/replies/index.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/replies/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+            <state relative-caret-position="405">
+              <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -56,8 +57,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="25" column="46" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="25" selection-end-column="46" />
+            <state relative-caret-position="443">
+              <caret line="22" column="73" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/sass/_main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+            <state relative-caret-position="629">
+              <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -132,8 +133,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Noti</find>
-      <find>acc</find>
       <find>custom</find>
       <find>app</find>
       <find>dash</find>
@@ -162,6 +161,8 @@
       <find>alert</find>
       <find>300</find>
       <find>repos</find>
+      <find>invalid-feedback</find>
+      <find>feed</find>
     </findStrings>
     <replaceStrings>
       <replace>&quot;code&quot;</replace>
@@ -218,11 +219,11 @@
         <option value="$PROJECT_DIR$/resources/views/profile/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/view.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/repositories/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/sass/_main.scss" />
         <option value="$PROJECT_DIR$/resources/views/posts/posts.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/StoreReply.php" />
         <option value="$PROJECT_DIR$/resources/views/dashboard.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" />
+        <option value="$PROJECT_DIR$/resources/sass/_main.scss" />
         <option value="$PROJECT_DIR$/resources/views/replies/index.blade.php" />
       </list>
     </option>
@@ -547,12 +548,12 @@
       <workItem from="1556956685499" duration="608000" />
       <workItem from="1556957315228" duration="20064000" />
       <workItem from="1557339595092" duration="149000" />
-      <workItem from="1557564345997" duration="17666000" />
+      <workItem from="1557564345997" duration="17822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112193000" />
+    <option name="totallyTimeSpent" value="112349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -876,13 +877,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/_main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/posts/posts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -937,15 +931,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="25" column="46" lean-forward="true" selection-start-line="21" selection-start-column="40" selection-end-line="25" selection-end-column="46" />
+        <state relative-caret-position="443">
+          <caret line="22" column="73" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/sass/_main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="98" column="10" selection-start-line="98" selection-start-column="10" selection-end-line="98" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/replies/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
+        <state relative-caret-position="405">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
         </state>
       </provider>
     </entry>
