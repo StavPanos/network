@@ -52,7 +52,7 @@ class SocialController extends Controller
 
     public function findOrCreateUser($user, $provider)
     {
-//        dd($user);
+        dd($user);
 
         return User::updateOrCreate(
             ['provider_id' => $user->id, 'email' => $user->email],
