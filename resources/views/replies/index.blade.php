@@ -13,8 +13,8 @@
 
         @if($errors->has('content'))
             @if(count($errors->get('content'))==1)
-                <span class="invalid-" role="alert">
-                    <strong class="text-danger">{{ $errors->first('content') }}</strong>
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('content') }}</strong>
                 </span>
             @endif
         @endif
