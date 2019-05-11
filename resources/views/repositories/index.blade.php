@@ -14,7 +14,10 @@
                 <div class="card-body">
                     <p>{{$repo->description}}</p>
                     <p>
-                        last update at {{ \Carbon\Carbon::parse($repo->updated_at)->diffForHumans() }}</p>
+                        last update -> <span class="lead">
+                            {{ \Carbon\Carbon::parse($repo->updated_at)->diffForHumans() }}
+                        </span>
+                    </p>
                 </div>
             </div>
             <br>
