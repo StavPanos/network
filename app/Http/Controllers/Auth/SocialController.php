@@ -12,11 +12,19 @@ class SocialController extends Controller
 {
     protected $redirectTo = '/dashboard';
 
+    /**
+     * @param $provider
+     * @return mixed
+     */
     public function redirectToProvider($provider)
     {
         return Socialite::driver($provider)->redirect();
     }
 
+    /**
+     * @param $provider
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function handleProviderCallback($provider)
     {
         $user = Socialite::driver($provider)->user();
@@ -28,6 +36,27 @@ class SocialController extends Controller
         return redirect($this->redirectTo);
     }
 
+    /**
+     * @param $user
+     * @param $provider
+     * @return User
+     */
+    public function findOrCreateUser($user, $provider) : User
+    {
+        return User::updateOrCreate(
+            [
+                'provider_id' => $user->id,
+                'email' => $user->email
+            ],
+            $this->setUser($user, $provider)
+        );
+    }
+
+    /**
+     * @param $user
+     * @param $provider
+     * @return array
+     */
     public function setUser($user, $provider)
     {
         if ($provider == 'github') {
@@ -48,13 +77,5 @@ class SocialController extends Controller
             'repos_url' => $repos_url,
             'email_verified_at' => Carbon::now()->timestamp
         ];
-    }
-
-    public function findOrCreateUser($user, $provider)
-    {
-        return User::updateOrCreate(
-            ['provider_id' => $user->id, 'email' => $user->email],
-            $this->setUser($user, $provider)
-        );
     }
 }
