@@ -4,28 +4,33 @@
     </div>
     <div class="card-body">
         @forelse($repositories as $repo)
-            <div class="card">
-                <div class="card-header">
-                    <h5>
-                        <a target="_blank" href="{{$repo->html_url}}">{{$repo->name}}</a>
-                    </h5>
-                </div>
+            @if($user->provider == 'github')
+                <div class="card">
+                    <div class="card-header">
+                        <h5>
+                            <a target="_blank" href="{{$repo->html_url}}">{{$repo->name}}</a>
+                        </h5>
+                    </div>
 
-                <div class="card-body">
-                    <span class="font-weight-bold">{{$repo->description}}</span>
+                    <div class="card-body">
+                        <span class="font-weight-bold">{{$repo->description}}</span>
 
-                    <hr>
+                        <hr>
 
-                    last update:
-                    <span class="lead">
+                        last update:
+                        <span class="lead">
                         {{ \Carbon\Carbon::parse($repo->updated_at)->diffForHumans() }}
                     </span>
+                    </div>
                 </div>
-            </div>
-            <br>
+                <br>
+            @endif
+
+            @if($user->provider == 'bitbucket')
+                {{$repo}}
+            @endif
         @empty
             No repositories
-
         @endforelse
     </div>
 
