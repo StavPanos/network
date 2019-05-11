@@ -40,9 +40,7 @@
         </div>
     </div>
 
-    <br>
-
-    <div class="card">
+    <div class="card mt-3">
         <div class="card-header">
             Technology
             @if(auth()->check())
@@ -57,10 +55,11 @@
 
                 <li class="list-group-item">
                     Programming Languages
+                    <hr>
 
-                    <ul class="list-group">
+                    <ul >
                         @foreach($user->planguages as $lang)
-                            <li class="list-group-item">
+                            <li >
                                 {{$lang->name}}
                             </li>
                         @endforeach

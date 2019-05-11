@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         @include('components.navbar')
+        @include('components.flash-message')
         <main class="mb-5">
             @yield('content')
         </main>

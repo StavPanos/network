@@ -1,14 +1,12 @@
 <div class="card">
     <div class="card-header">
-        <h2>
-            PROJECTS
+            Projects
 
             @if(auth()->check())
                 @if(auth()->user()->id == $user->id)
                     @include('projects.add_project')
                 @endif
             @endif
-        </h2>
     </div>
 
     @if($errors->any())
@@ -28,8 +26,8 @@
                     <form action="/project/delete" method="post" class="d-inline">
                         {{csrf_field()}}
                         <input type="hidden" name="project_id" value="{{$project->id}}">
-                        <button type="submit" class="ml-3 btn btn-link">
-                            <i class="fa fa-trash text-black"></i>
+                        <button type="submit" class="ml-3">
+                            <i class="fa fa-trash"></i>
                         </button>
                     </form>
                 @endif

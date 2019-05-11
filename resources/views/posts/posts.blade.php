@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2>POSTS</h2>
+        Posts
     </div>
 
     @if(auth()->check())

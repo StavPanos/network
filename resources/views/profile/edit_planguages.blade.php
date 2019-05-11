@@ -1,9 +1,7 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-link" data-toggle="modal" data-target="#technologyModal">
-    <i class="fa fa-edit text-black"></i>
-</button>
+<a data-toggle="modal" data-target="#technologyModal" class="ml-3">
+    <i class="fa fa-edit" style="vertical-align: middle;"></i>
+</a>
 
-<!-- Modal -->
 <div class="modal fade" id="technologyModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -18,7 +16,7 @@
                 <form action="profile/planguages" method="post">
                     @csrf
 
-                    <select name="planguages[]" multiple class="multiple-select">
+                    <select name="planguages[]" multiple class="multiple-select form-control">
                         @foreach($planguages as $planguage)
                             <option value="{{$planguage->id}}"
                                     @if(auth()->user()->planguages->contains($planguage))
@@ -29,7 +27,9 @@
                         @endforeach
                     </select>
 
-                    <button type="submit" class="btn btn-info">Save</button>
+                    <br>
+
+                    <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Save</button>
                 </form>
             </div>
         </div>

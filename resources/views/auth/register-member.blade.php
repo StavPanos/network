@@ -1,16 +1,16 @@
 <div class="card">
-    <div class="card-header">{{ __('Register') }} - Member</div>
+    <div class="card-header">Register</div>
 
     <div class="card-body">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
                 <form method="POST" action="{{ route('register') }}">
                     @csrf
 
                     <div class="form-group row">
                         <label for="name"
-                               class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                               class="col-md-4 col-form-label text-md-right">Name</label>
 
                         <div class="col-md-6">
                             <input id="name" type="text"
@@ -71,20 +71,23 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-6 offset-md-4">
-{{--                            {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '100%']) !!}--}}
+                            {{-- {!! NoCaptcha::display(['data-theme' => 'dark', 'data-size'=> '100%']) !!}--}}
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0 mt-3">
+                    <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
-                            <button type="submit" class="btn btn-info" style="width: 100%;">
-                                {{ __('Register') }}
-                            </button>
+                            <div class="form-check p-0">
+                                <button type="submit" class="btn btn-outline-primary waves-effect btn-block">Register
+                                </button>
+
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
-            @include('components.social')
+
         </div>
+        @include('components.social')
     </div>
 </div>

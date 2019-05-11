@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div class="container mt-5">
+    <div class="container mt-3">
         <div class="row">
             <div class="col-lg-6">
                 <h1>News</h1>

@@ -28,11 +28,11 @@
                         @include('components.search')
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown d-flex align-items-center ml-5">
                         @if(count(auth()->user()->notifications) == 0)
-                            <a id="d" class="nav-link dropdown-toggle" href="#" role="button"
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bell"></i>
+                                <i class="fa fa-bell-o"></i>
                             </a>
                         @else
                             <a id="navbarDropdown1" class="nav-link dropdown-toggle" href="#" role="button"
@@ -52,13 +52,14 @@
                         </div>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a id="navbarDropdown2" class="nav-link dropdown-toggle" href="#" role="button"
+                    <li class="nav-item dropdown d-flex align-items-center ml-5">
+                        <a id="navbarDropdown2" class="nav-link dropdown-toggle font-weight-bold" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             {{ auth()->user()->name }}
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
                             <a class="dropdown-item" href="/profile">Profile</a>
                             <a class="dropdown-item" href="/connections">Connections</a>
 

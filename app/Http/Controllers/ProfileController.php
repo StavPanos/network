@@ -71,7 +71,7 @@ class ProfileController extends Controller
         auth()->user()->bio = request('bio');
         auth()->user()->save();
 
-        return back();
+        return back()->with('success', 'Success, your profile details have been updated');
     }
 
     public function planguages()
@@ -80,6 +80,6 @@ class ProfileController extends Controller
 
         auth()->user()->planguages()->sync($languages, true);
 
-        return back();
+        return back()->with('success', 'Success, technology details have been updated');
     }
 }

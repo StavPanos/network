@@ -1,9 +1,7 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-link" data-toggle="modal" data-target="#projectsModal">
-    <i class="fa fa-plus text-black"></i>
-</button>
+<a data-toggle="modal" data-target="#projectsModal" class="ml-3">
+    <i class="fa fa-plus" style="vertical-align: middle;"></i>
+</a>
 
-<!-- Modal -->
 <div class="modal fade" id="projectsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -19,15 +17,21 @@
                     @csrf
 
                     <label for="title">Title</label>
-                    <input type="text" name="title">
+                    <input type="text" name="title" class="form-control">
+
+                    <br>
 
                     <label for="description">Description</label>
-                    <textarea name="description" id=""></textarea>
+                    <textarea name="description" rows="5" id="" class="form-control"></textarea>
+
+                    <br>
 
                     <label for="repository">Repository URL</label>
-                    <input type="text" name="repository">
+                    <input type="text" name="repository" class="form-control">
 
-                    <button class="btn btn-info" type="submit">Add Project</button>
+                    <br>
+
+                    <button class="btn btn-primary btn-outline-primary btn-block" type="submit">Add Project</button>
                 </form>
             </div>
         </div>

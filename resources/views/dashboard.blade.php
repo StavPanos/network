@@ -1,41 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h2>Dashboard</h2>
-
-                        <form method="post" action="post/create" class="mt-5">
-                            {{csrf_field()}}
-                            <div class="form-group">
-                                <label for="comment">
-                                    Add a post
-                                </label>
-                                <textarea name="content" class="form-control" rows="2" id="comment"></textarea>
-                            </div>
-
-                            @if ($errors->has('content'))
-                                <span class="invalid-" role="alert">
-                                    <strong>{{ $errors->first('content') }}</strong>
-                                </span>
-                            @endif
-
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-info">Submit</button>
-                            </div>
-                        </form>
+                        Feed
                     </div>
 
                     <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-
                         @forelse($friends as $friend)
                             @if($friend->posts->first())
                                 <div class="card mt-3">
@@ -100,8 +74,38 @@
                                 </div>
                             @endif
                         @empty
-                            <p>No posts</p>
+                            Nothing at this moment
                         @endforelse
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Post
+                    </div>
+
+                    <div class="card-body">
+                        <form method="post" action="post/create">
+                            {{csrf_field()}}
+                            <div class="form-group">
+                                <label for="comment">
+                                    Add a post
+                                </label>
+                                <textarea name="content" class="form-control" rows="4" id="comment"></textarea>
+                            </div>
+
+                            @if ($errors->has('content'))
+                                <span class="invalid-" role="alert">
+                                    <strong>{{ $errors->first('content') }}</strong>
+                                </span>
+                            @endif
+
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

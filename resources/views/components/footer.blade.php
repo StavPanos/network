@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
-                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded" href="">About </a>
+                <a class="btn btn-primary btn-outline-primary btn-block" href="">About </a>
                 <br>
 
-                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded mt-3" href="">Terms & Conditions</a>
+                <a class="btn btn-primary btn-outline-primary btn-block mt-3" href="">Terms & Conditions</a>
                 <br>
 
-                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded mt-3" href="">Privacy Policy</a>
+                <a class="btn btn-primary btn-outline-primary btn-block mt-3" href="">Privacy Policy</a>
                 <br>
             </div>
 

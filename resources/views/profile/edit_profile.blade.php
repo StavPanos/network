@@ -1,9 +1,7 @@
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal">
-    <i class="fa fa-edit text-black"></i>
-</button>
+<a data-toggle="modal" data-target="#exampleModal" class="ml-3">
+    <i class="fa fa-edit" style="vertical-align: middle;"></i>
+</a>
 
-<!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -18,6 +16,7 @@
                 <form action="/avatar" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
+                        <label for="name">Profile image</label>
                         <input type="file" class="form-control-file" name="avatar" id="avatarFile"
                                aria-describedby="fileHelp">
                         <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of
@@ -25,24 +24,24 @@
                             not be more than 2MB.
                         </small>
                     </div>
-                    <button type="submit" class="btn btn-info">Change image</button>
+                    <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Change image</button>
                 </form>
 
-                <br><br>
+                <br><hr>
 
                 <form action="profile/edit" method="post">
                     @csrf
                     <label for="name">Name</label>
-                    <input type="text" name="name" value="{{$user->name}}">
-
-                    <br><br>
-
-                    <label for="name">Bio</label>
-                    <textarea name="bio" value="{{$user->bio}}"></textarea>
+                    <input type="text" name="name" class="form-control" value="{{$user->name}}">
 
                     <br>
 
-                    <button type="submit" class="btn btn-info">Save</button>
+                    <label for="name">Bio</label>
+                    <textarea name="bio" value="{{$user->bio}}" class="form-control"></textarea>
+
+                    <br>
+
+                    <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Save</button>
                 </form>
             </div>
         </div>
