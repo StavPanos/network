@@ -35,7 +35,7 @@ class SocialController extends Controller
         }
 
         if ($provider == 'bitbucket') {
-            $repos_url = $user->user['links']['repositories'];
+            $repos_url = $user->user['links']['repositories']['href'];
         }
 
         return [
