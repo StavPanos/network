@@ -30,7 +30,7 @@
 
                                             <div class="form-group">
                                                 <label for="reply">
-                                                    Add a reply
+                                                    Reply
                                                 </label>
                                                 <textarea name="content" class="form-control" rows="2"
                                                           id="comment"></textarea>
@@ -43,7 +43,7 @@
                                             @endif
 
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-info">Submit</button>
+                                                <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
                                             </div>
                                         </form>
 
