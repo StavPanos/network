@@ -52,26 +52,10 @@ class SocialController extends Controller
 
     public function findOrCreateUser($user, $provider)
     {
-        dd($user);
+//        dd($user);
 
-        $authUser = User::where('provider_id', $user->id)->first();
-
-        if (!$authUser) {
-            $authUser = User::where('email', $user->email)->first();
-
-            if ($authUser) {
-                $authUser->update(
-                    $this->setUser($user, $provider)
-                );
-
-                return $authUser;
-            }
-
-            return User::create(
-                $this->setUser($user, $provider)
-            );
-        }
-
-        return $authUser;
+        return User::updateOrCreate(
+            $this->setUser($user, $provider)
+        );
     }
 }
