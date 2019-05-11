@@ -27,4 +27,16 @@ class StoreReply extends FormRequest
             'content' => 'required'
         ];
     }
+
+    /**
+     * Get custom attributes for validator errors.
+     *
+     * @return array
+     */
+    public function attributes()
+    {
+        return [
+            'content' => 'reply content',
+        ];
+    }
 }
