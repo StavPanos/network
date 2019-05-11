@@ -1,8 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand text-dark" href="{{ url('/') }}">
             Social Network for Developers
         </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -14,12 +15,12 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Join</a>
+                        <a class="nav-link btn btn-rounded btn-outline-primary waves-effect mr-0" href="{{ route('login') }}">Login</a>
                     </li>
 
                     @if (Route::has('register'))
                         <li class="nav-item ml-3">
-                            <a class="nav-link" href="{{ route('register') }}">Register</a>
+                            <a class="nav-link btn btn-outline-primary waves-effect mr-0" href="{{ route('register') }}">Join</a>
                         </li>
                     @endif
                 @else
@@ -62,7 +63,7 @@
                             <a class="dropdown-item" href="/connections">Connections</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="preventDefault(); document.getElementById('logout-form').submit();">
+                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 

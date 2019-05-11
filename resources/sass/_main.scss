@@ -1,18 +1,9 @@
-@font-face {
-    font-family: Monaco;
-    src: url('/fonts/Monaco.ttf');
-}
-
 body{
-    font-family: 'Montserrat';
+    font-family: 'Roboto';
 }
 
 main{
   min-height: 80vh;
-}
-
-nav{
-    padding: 20px!important;
 }
 
 #website {
@@ -20,7 +11,7 @@ nav{
 }
 
 .navbar-brand{
-    font-family: 'Lobster';
+    font-family: 'Playfair Display';
 }
 
 #chartdiv {
@@ -55,29 +46,41 @@ nav{
 }
 
 .welcome{
-    background-image: url('/images/background.jpeg');
-    min-height: 80vh;
-    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.5);
+    background-image: url('/images/background2.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh;
+    box-shadow: inset 0 0 0 2000px rgba(0,0,0,0.4);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     line-height: 60px;
 
-    .welcome-text{
-        width: 70%;
+    h1{
+        font-size: 4rem;
     }
 
-    h1{
-        font-weight: 900;
-        font-family: 'Raleway';
-        line-height: 60px;
+    h2{
+        font-weight: 600;
+    }
+}
+
+nav{
+    height: 80px!important;
+}
+
+.social-buttons{
+    a{
+        width: 50px;
+        text-align: center;
     }
 }
 
 .nav-item{
     a{
         opacity: 1!important;
+        width: 100px;
     }
 }
 

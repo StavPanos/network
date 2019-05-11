@@ -26,6 +26,7 @@
     "dependencies": {
         "daemonite-material": "^4.1.1",
         "font-awesome": "^4.7.0",
-        "jquery-bar-rating": "^1.2.2"
+        "jquery-bar-rating": "^1.2.2",
+        "mdbootstrap": "^4.8.0"
     }
 }

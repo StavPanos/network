@@ -1,38 +1,21 @@
-<footer class="bg-dark p-4">
+<footer class="bg-dark p-4" style="margin-top:150px;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <ul class="list-group bg-dark">
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">About</a>
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">Terms & Conditions</a>
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">Privacy Policy</a>
-                    </li>
-                </ul>
+            <div class="col-lg-3">
+                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded" href="">About </a>
+                <br>
+
+                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded mt-3" href="">Terms & Conditions</a>
+                <br>
+
+                <a class="btn btn-primary btn-outline-primary btn-block btn-rounded mt-3" href="">Privacy Policy</a>
+                <br>
             </div>
 
-            <div class="col-lg-6">
-                <ul class="list-group">
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="list-group-item bg-dark">
-                        <a class="btn btn-link text-white" href="">
-                            <i class="fa fa-youtube"></i>
-                        </a>
-                    </li>
-                </ul>
+            <div class="col-lg-9 text-right social-buttons">
+                <a class="btn-floating btn-lg blue-gradient"><i class="fa fa-facebook"></i></a>
+                <a class="btn-floating btn-lg purple-gradient ml-3"><i class="fa fa-twitter"></i></a>
+                <a class="btn-floating btn-lg peach-gradient ml-3"><i class="fa fa-youtube"></i></a>
             </div>
         </div>
     </div>

@@ -7,8 +7,7 @@ try {
     require('bootstrap')
 } catch (e) {}
 
-require('daemonite-material/js/material.min.js');
-require('jquery-bar-rating/dist/jquery.barrating.min');
+require('mdbootstrap/js/mdb.min');
 
 window.axios = require('axios');
 
