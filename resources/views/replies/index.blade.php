@@ -11,8 +11,6 @@
                       id="comment"></textarea>
         </div>
 
-        {{$errors}}
-
         @if($errors->has('content'))
             @if(count($errors->get('content'))==1)
                 <span class="invalid-" role="alert">
