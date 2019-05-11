@@ -57,9 +57,9 @@
                     Programming Languages
                     <hr>
 
-                    <ul >
+                    <ul class="list-group">
                         @foreach($user->planguages as $lang)
-                            <li >
+                            <li class="list-item">
                                 {{$lang->name}}
                             </li>
                         @endforeach
