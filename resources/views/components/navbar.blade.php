@@ -14,11 +14,12 @@
             <ul class="navbar-nav ml-auto">
                 @guest
                     <li class="nav-item">
-                        <a class="nav-link btn btn-info" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <a class="nav-link" href="{{ route('login') }}">Join</a>
                     </li>
+
                     @if (Route::has('register'))
                         <li class="nav-item ml-3">
-                            <a class="nav-link btn btn-info" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">Register</a>
                         </li>
                     @endif
                 @else
@@ -61,7 +62,7 @@
                             <a class="dropdown-item" href="/connections">Connections</a>
 
                             <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                               onclick="preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
