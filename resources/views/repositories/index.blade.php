@@ -12,9 +12,9 @@
                 </div>
 
                 <div class="card-body">
-                    <span class="bold">{{$repo->description}}</span>
+                    <span class="font-weight-bold">{{$repo->description}}</span>
 
-                    <br>
+                    <hr>
 
                     last update:
                     <span class="lead">
