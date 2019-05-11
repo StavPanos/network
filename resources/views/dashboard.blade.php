@@ -49,14 +49,17 @@
                                 <textarea name="content" class="form-control" rows="4" id="comment"></textarea>
                             </div>
 
-                            @if ($errors->has('content'))
-                                <span class="invalid-" role="alert">
-                                    <strong>{{ $errors->first('content') }}</strong>
-                                </span>
+                            @if($errors->has('content'))
+                                @if(count($errors->get('content'))==2)
+                                    <span class="invalid-" role="alert">
+                                        <strong>{{ $errors->first('content') }}</strong>
+                                    </span>
+                                @endif
                             @endif
 
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
+                                <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit
+                                </button>
                             </div>
                         </form>
                     </div>

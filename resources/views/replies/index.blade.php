@@ -14,9 +14,11 @@
         {{$errors}}
 
         @if($errors->has('content'))
-            <span class="invalid-" role="alert">
-                <strong>{{ $errors->first('content') }}</strong>
-            </span>
+            @if(count($errors->get('content'))==1)
+                <span class="invalid-" role="alert">
+                    <strong>{{ $errors->first('content') }}</strong>
+                </span>
+            @endif
         @endif
 
         <div class="form-group">
