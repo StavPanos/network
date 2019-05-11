@@ -1,5 +1,7 @@
-<div class="form-group row">
-    <label for="email" class="col-md-4 col-form-label text-md-right">Or login with</label>
+<hr>
+
+<div class="form-group row mt-3">
+    <label for="email" class="col-md-6 offset-md-4 col-form-label text-md-center">Or sign in with</label>
 </div>
 
 <div class="form-group row">
