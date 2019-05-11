@@ -1,8 +1,8 @@
-<div class="card">
+<div class="card height-scroll">
     <div class="card-header">
         Repositories
     </div>
-    <div class="card-body repos">
+    <div class="card-body">
         @foreach($repositories as $repo)
             <div class="card">
                 <div class="card-header">
