@@ -30,11 +30,11 @@
                 <a href="/profile/{{$reply->user->id}}">{{$reply->user->name}}</a>
                 commented {{$reply->created_at->diffForHumans()}}
 
-                <form method="post" action="reply/delete" class="mt-2 d-inline">
+                <form method="post" action="reply/delete" class="mt-2">
                     {{csrf_field()}}
                     <input type="hidden" value="{{$reply->id}}" name="id">
 
-                    <div class="form-group">
+                    <div class="form-group d-inline">
                         <button type="submit" class="bg-transparent border-0">
                             <i class="fa fa-trash"></i>
                         </button>

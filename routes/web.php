@@ -11,7 +11,7 @@ Route::get('/', function () {
         return redirect('dashboard');
 
     return view('welcome');
-});
+})->name('start');
 
 Auth::routes(['verify' => true]);
 

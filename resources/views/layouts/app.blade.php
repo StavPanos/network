@@ -10,16 +10,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 <body>
-    <div id="app">
-        @include('components.navbar')
-        @include('components.flash-message')
-        <main class="mb-5">
-            @yield('content')
-        </main>
-        @include('components.footer')
-    </div>
+<div id="app">
+    @include('components.navbar')
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    @yield('scripts')
+    @if(\Request::route()->getName()!='start')
+        @include('components.flash-message')
+    @endif
+
+    <main class="mb-5">
+        @yield('content')
+    </main>
+    @include('components.footer')
+</div>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
+@yield('scripts')
 </body>
 </html>
