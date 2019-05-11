@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateProfile;
+use App\Models\Country;
 use App\Models\Planguage;
 use App\Models\User;
 use GuzzleHttp\Client;
@@ -13,6 +14,7 @@ class ProfileController extends Controller
     {
         $posts = auth()->user()->posts;
         $planguages = Planguage::get();
+        $countries = Country::get();
 
         $repositories = [];
 
@@ -22,7 +24,7 @@ class ProfileController extends Controller
             $repositories = json_decode($res->getBody());
         }
 
-        return view('profile.index', compact('posts', 'planguages', 'repositories'));
+        return view('profile.index', compact('posts', 'planguages', 'repositories', 'countries'));
     }
 
     public function view($userId)

@@ -12,12 +12,12 @@ class CountriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $greece = new Country();
+        $countries = [
+            ['name' => 'Greece', 'code' => 'GR'],
+            ['name' => 'Germany', 'code' => 'DE'],
+            ['name' => 'US', 'code' => 'US']
+        ];
 
-        $greece->name = 'Greece';
-
-        $greece->code = 'GR';
-
-        $greece->save();
+        Country::insert($countries);
     }
 }

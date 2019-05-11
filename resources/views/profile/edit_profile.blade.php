@@ -27,7 +27,8 @@
                     <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Change image</button>
                 </form>
 
-                <br><hr>
+                <br>
+                <hr>
 
                 <form action="profile/edit" method="post">
                     @csrf
@@ -37,8 +38,16 @@
                     <br>
 
                     <label for="country">Country</label>
-                    <select name="country_id">
-                        <option value="1" >Greece</option>
+                    <select name="country_id" class="form-control">
+                        @foreach($countries as $country)
+                            <option value="{{$country->id}}"
+                                    @if(isset($user->country))
+                                        @if($country->id==$user->country->id)
+                                        selected
+                                        @endif
+                                    @endif
+                            >{{$country->name}}</option>
+                        @endforeach
                     </select>
 
                     <br>
