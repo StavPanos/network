@@ -36,7 +36,7 @@ class StoreReply extends FormRequest
     public function attributes()
     {
         return [
-            'content' => 'reply content',
+            'content' => 'reply_content',
         ];
     }
 }
