@@ -27,7 +27,7 @@
             @endif
 
             @if($user->provider == 'bitbucket')
-                {{$repo}}
+                {{$repo[0]}}
             @endif
         @empty
             No repositories
