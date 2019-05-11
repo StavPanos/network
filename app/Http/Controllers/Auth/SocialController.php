@@ -55,6 +55,7 @@ class SocialController extends Controller
 //        dd($user);
 
         return User::updateOrCreate(
+            ['provider_id' => $user->id, 'email' => $user->email],
             $this->setUser($user, $provider)
         );
     }
