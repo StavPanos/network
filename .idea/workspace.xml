@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5474c01a-4bfc-45ce-9662-8cfff8069843" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReplyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreReply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreReply.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreReply.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+            <state relative-caret-position="324">
+              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -611,12 +611,12 @@
       <workItem from="1556956685499" duration="608000" />
       <workItem from="1556957315228" duration="20064000" />
       <workItem from="1557339595092" duration="149000" />
-      <workItem from="1557564345997" duration="16215000" />
+      <workItem from="1557564345997" duration="16244000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110742000" />
+    <option name="totallyTimeSpent" value="110771000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -1008,8 +1008,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/StoreReply.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+        <state relative-caret-position="324">
+          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
         </state>
       </provider>
     </entry>
