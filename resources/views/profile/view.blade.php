@@ -5,7 +5,7 @@
         <div class="row">
             @include('friends.friendship', ['user'=>$user])
         </div>
-        <div class="row">
+        <div class="row mt-3">
             @include('profile.profile', ['user' => $user])
             <div class="col-md-6">
                 @include('repositories.index', ['user' => $user])

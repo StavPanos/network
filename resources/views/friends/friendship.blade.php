@@ -1,5 +1,5 @@
 @if(auth()->check())
-    <div class="col-lg-2">
+    <div class="col-lg-4">
         <div class="card">
             <div class="card-header">
 
