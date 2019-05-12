@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5474c01a-4bfc-45ce-9662-8cfff8069843" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -106,20 +106,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/profile/view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="459">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="729">
-              <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+            <state relative-caret-position="648">
+              <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
+              <caret line="15" column="93" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+              <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
             </state>
           </provider>
         </entry>
@@ -218,8 +220,8 @@
         <option value="$PROJECT_DIR$/resources/views/profile/edit_profile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/posts/posts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/avatar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/view.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" />
       </list>
     </option>
   </component>
@@ -540,12 +542,12 @@
       <workItem from="1556957315228" duration="20064000" />
       <workItem from="1557339595092" duration="149000" />
       <workItem from="1557564345997" duration="21857000" />
-      <workItem from="1557651857667" duration="1598000" />
+      <workItem from="1557651857667" duration="1653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117982000" />
+    <option name="totallyTimeSpent" value="118037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -937,17 +939,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/profile/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="729">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
+        <state relative-caret-position="459">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profile/view.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="648">
+          <caret line="5" column="86" selection-start-line="5" selection-start-column="86" selection-end-line="5" selection-end-column="86" />
+          <caret line="15" column="93" selection-start-line="15" selection-start-column="93" selection-end-line="15" selection-end-column="93" />
+          <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
         </state>
       </provider>
     </entry>
