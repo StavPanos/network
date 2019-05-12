@@ -7,7 +7,7 @@
         </div>
         <div class="row mt-3">
             @include('profile.profile', ['user' => $user])
-            <div class="col-md-6">
+            <div class="col-md-8">
                 @include('repositories.index', ['user' => $user])
                 @include('projects.projects', ['user'=>$user])
                 @include('posts.posts', ['user'=>$user])
