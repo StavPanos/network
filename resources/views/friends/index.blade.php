@@ -19,21 +19,20 @@
                         <ul class="list-group">
                             @foreach($requests as $request)
                                 <li class="list-group-item">
-                                    <form method="post" action="friend/accept">
+                                    <a href="profile/{{$request->id}}">
+                                        {{$request->sender->name}}
+                                    </a>
+                                    <form method="post" action="friend/accept" class="d-inline">
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$request->sender->id}}">
                                         <button class="btn btn-primary btn-outline-primary d-inline-block" type="submit">Accept</button>
                                     </form>
 
-                                    <form method="post" action="friend/decline">
+                                    <form method="post" action="friend/decline" class="d-inline">
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$request->sender->id}}">
                                         <button class="btn btn-danger btn-outline-danger d-inline-block" type="submit">Decline</button>
                                     </form>
-
-                                    <a href="profile/{{$request->id}}">
-                                        {{$request->sender->name}}
-                                    </a>
                                 </li>
                             @endforeach
                         </ul>
