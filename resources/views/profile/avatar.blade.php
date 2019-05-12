@@ -5,5 +5,5 @@
         <img src="{{$user->avatar}}">
     @endif
 @else
-    <img src="{{asset('images/no-image.png')}}" alt="" class="w-25">
+    <img src="{{asset('images/no-image.png')}}" alt="">
 @endif
