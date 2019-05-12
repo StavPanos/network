@@ -1,5 +1,5 @@
 @if(auth()->check())
-    <div class="col-lg-4">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
 
@@ -22,8 +22,6 @@
                         </form>
                     </div>
                 @endif
-
-                <br>
 
                 <form method="post" action="friend/block">
                     {{csrf_field()}}
