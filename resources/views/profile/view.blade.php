@@ -7,7 +7,6 @@
             <div class="col-md-6">
                 @include('repositories.index', ['user' => $user])
                 @include('projects.projects', ['user'=>$user])
-                <br>
                 @include('posts.posts', ['user'=>$user])
             </div>
             @include('friends.friendship', ['user'=>$user])
