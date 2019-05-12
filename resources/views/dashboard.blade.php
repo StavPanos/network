@@ -50,10 +50,12 @@
                             </div>
 
                             @if($errors->has('content'))
-                                @if(count($errors->get('content'))==2)
-                                    <span class="invalid-" role="alert">
-                                        <strong>{{ $errors->first('content') }}</strong>
-                                    </span>
+                                @if($errors->first('content') == 'Content is required')
+                                    <div class="mb-3">
+                                        <span class="invalid" role="alert">
+                                            <strong>{{ $errors->first('content') }}</strong>
+                                        </span>
+                                    </div>
                                 @endif
                             @endif
 

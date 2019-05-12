@@ -43,7 +43,7 @@
                             <option value="{{$country->id}}"
                                     @if(isset($user->country))
                                         @if($country->id==$user->country->id)
-                                        selected
+                                            selected
                                         @endif
                                     @endif
                             >{{$country->name}}</option>
@@ -53,7 +53,7 @@
                     <br>
 
                     <label for="name">Bio</label>
-                    <textarea name="bio" value="{{$user->bio}}" class="form-control"></textarea>
+                    <textarea rows="5" name="bio" value="{{$user->bio}}" class="form-control"></textarea>
 
                     <br>
 

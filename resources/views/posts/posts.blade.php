@@ -15,6 +15,14 @@
                         <textarea name="content" class="form-control" rows="4" id="comment"></textarea>
                     </div>
 
+                    @if($errors->has('content'))
+                        <div class="mb-3">
+                            <span class="invalid" role="alert">
+                                <strong>{{ $errors->first('content') }}</strong>
+                            </span>
+                        </div>
+                    @endif
+
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-outline-primary btn-block">Submit</button>
                     </div>
