@@ -2,12 +2,11 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-header">
-
                 @if(!auth()->user()->isFriendWith($user))
                     <form method="post" action="/friend/connect">
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$user->id}}">
-                        <button class="btn btn-primary btn-outline-primary btn-block" type="submit">
+                        <button class="btn btn-primary btn-outline-primary " type="submit">
                             <i class="fa fa-plus"></i>
                             Connect
                         </button>
@@ -17,7 +16,7 @@
                         <form method="post" action="/friend/disconnect">
                             {{csrf_field()}}
                             <input type="hidden" name="id" value="{{$user->id}}">
-                            <button class="btn btn-danger btn-outline-danger btn-block" type="submit">Disconnect
+                            <button class="btn btn-danger btn-outline-danger " type="submit">Disconnect
                             </button>
                         </form>
                     </div>
