@@ -2,8 +2,10 @@
 
 @section('content')
     <div class="container mt-3">
-        <div class="row justify-content-center">
+        <div class="row">
             @include('friends.friendship', ['user'=>$user])
+        </div>
+        <div class="row">
             @include('profile.profile', ['user' => $user])
             <div class="col-md-6">
                 @include('repositories.index', ['user' => $user])
