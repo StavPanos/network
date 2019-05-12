@@ -25,7 +25,7 @@
                 <form method="post" action="friend/block">
                     {{csrf_field()}}
                     <input type="hidden" name="id" value="{{$user->id}}">
-                    <button class="btn btn-danger w-100" type="submit">
+                    <button class="btn btn-danger btn-outline-danger" type="submit">
                         <i class="fa fa-ban"></i>
                         Block
                     </button>
