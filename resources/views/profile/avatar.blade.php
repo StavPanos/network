@@ -1,9 +1,9 @@
 @if($user->avatar)
     @if($user->custom_avatar)
-        <img src="/storage/avatars/{{$user->avatar}}">
+        <img class="avatar" src="/storage/avatars/{{$user->avatar}}">
     @else
-        <img src="{{$user->avatar}}">
+        <img class="avatar" src="{{$user->avatar}}">
     @endif
 @else
-    <img src="{{asset('images/no-image.png')}}" alt="">
+    <img class="avatar" src="{{asset('images/no-image.png')}}" alt="">
 @endif
