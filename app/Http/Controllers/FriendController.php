@@ -30,7 +30,7 @@ class FriendController extends Controller
 
         auth()->user()->befriend($user);
 
-        if (!Notification::where('title', 'friend request from ' . auth()->user()->name)->first()) {
+        if (!Notification::where('title', 'Friend request from ' . auth()->user()->name)->first()) {
             $notification = new Notification([
                 'title' => 'friend request from ' . auth()->user()->name,
                 'type' => 'friend_request'

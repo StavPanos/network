@@ -22,13 +22,13 @@
                                     <form method="post" action="friend/accept">
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$request->sender->id}}">
-                                        <button class="btn btn-success w-100" type="submit">Accept</button>
+                                        <button class="btn btn-primary btn-outline-primary d-inline-block" type="submit">Accept</button>
                                     </form>
 
                                     <form method="post" action="friend/decline">
                                         {{csrf_field()}}
                                         <input type="hidden" name="id" value="{{$request->sender->id}}">
-                                        <button class="btn btn-success w-100" type="submit">Decline</button>
+                                        <button class="btn btn-danger btn-outline-danger d-inline-block" type="submit">Decline</button>
                                     </form>
 
                                     <a href="profile/{{$request->id}}">
