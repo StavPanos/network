@@ -41,7 +41,7 @@ class FriendController extends Controller
             );
         }
 
-        return back()->with('success', 'Friend Request sent');
+        return back()->with('success', 'A friend request has been sent to the user');
     }
 
     public function disconnect()

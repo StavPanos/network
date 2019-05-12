@@ -1,10 +1,11 @@
-<div class="card height-scroll mt-3">
-    <div class="card-header">
-        Add post
-    </div>
+@if(auth()->check())
+    @if($user->id == auth()->user()->id)
+        <div class="card height-scroll mt-3">
+            <div class="card-header">
+                Add post
+            </div>
 
-    @if(auth()->check())
-        @if($user->id == auth()->user()->id)
+
             <div class="card-body">
                 <form method="post" action="post/create">
                     {{csrf_field()}}
@@ -28,13 +29,13 @@
                     </div>
                 </form>
             </div>
-        @endif
+        </div>
     @endif
-</div>
+@endif
 
 <div class="card mt-3">
     <div class="card-header">
-        My posts
+        Posts
     </div>
 
     <div class="card-body">
