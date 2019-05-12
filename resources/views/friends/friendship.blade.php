@@ -16,7 +16,7 @@
                         <form method="post" action="/friend/disconnect" class="d-inline-block">
                             {{csrf_field()}}
                             <input type="hidden" name="id" value="{{$user->id}}">
-                            <button class="btn btn-danger btn-outline-danger " type="submit">Disconnect
+                            <button class="btn btn-danger btn-outline-danger d-inline-block" type="submit">Disconnect
                             </button>
                         </form>
                     </div>
