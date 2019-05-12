@@ -7,7 +7,7 @@
                     <form method="post" action="/friend/connect">
                         {{csrf_field()}}
                         <input type="hidden" name="id" value="{{$user->id}}">
-                        <button class="btn btn-primary w-100" type="submit">
+                        <button class="btn btn-primary btn-outline-primary btn-block" type="submit">
                             <i class="fa fa-plus"></i>
                             Connect
                         </button>
@@ -17,7 +17,7 @@
                         <form method="post" action="/friend/disconnect">
                             {{csrf_field()}}
                             <input type="hidden" name="id" value="{{$user->id}}">
-                            <button class="btn btn-danger w-100" type="submit">Disconnect</button>
+                            <button class="btn btn-danger btn-outline-primary btn-block" type="submit">Disconnect</button>
                         </form>
                     </div>
                 @endif

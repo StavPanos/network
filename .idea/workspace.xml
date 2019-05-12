@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5474c01a-4bfc-45ce-9662-8cfff8069843" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/view.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/view.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/profile/edit_profile.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="55" column="105" selection-start-line="55" selection-start-column="105" selection-end-line="55" selection-end-column="105" />
+            <state relative-caret-position="583">
+              <caret line="59" column="94" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -49,18 +49,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="702">
               <caret line="59" column="34" selection-start-line="51" selection-start-column="28" selection-end-line="59" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/profile/profile.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-556">
-              <caret line="25" column="53" selection-start-line="25" selection-start-column="53" selection-end-line="25" selection-end-column="53" />
-              <folding>
-                <element signature="n#style#0;n#i#0;n#li#2;n#ul#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -118,11 +106,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/profile/view.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="270">
+              <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="513">
+              <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -176,7 +173,6 @@
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
         <option value="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_02_200314_create_notifications_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Notification.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FriendController.php" />
         <option value="$PROJECT_DIR$/app/Models/User.php" />
@@ -223,6 +219,7 @@
         <option value="$PROJECT_DIR$/resources/views/posts/posts.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/avatar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/profile/view.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/friends/friendship.blade.php" />
       </list>
     </option>
   </component>
@@ -450,6 +447,13 @@
               <item name="network.test" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="friends" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="network.test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="network.test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="posts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -529,12 +533,12 @@
       <workItem from="1556957315228" duration="20064000" />
       <workItem from="1557339595092" duration="149000" />
       <workItem from="1557564345997" duration="21857000" />
-      <workItem from="1557651857667" duration="958000" />
+      <workItem from="1557651857667" duration="1088000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117342000" />
+    <option name="totallyTimeSpent" value="117472000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -705,13 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="56" column="28" selection-start-line="56" selection-start-column="28" selection-end-line="56" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -888,13 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/profile/edit_profile.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="55" column="105" selection-start-line="55" selection-start-column="105" selection-end-line="55" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/posts/posts.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -938,8 +928,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/profile/view.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="270">
+          <caret line="10" column="18" lean-forward="true" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/profile/edit_profile.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="59" column="94" lean-forward="true" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/friends/friendship.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="19" column="57" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
         </state>
       </provider>
     </entry>
