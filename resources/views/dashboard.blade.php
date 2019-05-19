@@ -14,7 +14,7 @@
                             @if($friend->posts->first())
                                 <div class="card">
                                     <div class="card-header">
-                                        <img src="{{$friend->avatar}}" alt="">
+                                        <img class="avatar" src="{{$friend->avatar}}" alt="">
                                         <a class="link" href="profile/{{$friend->id}}">{{$friend->name}}</a>
                                         posted {{$friend->posts->first()->created_at->diffForHumans()}}
                                     </div>
