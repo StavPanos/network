@@ -11,11 +11,10 @@ class FriendController extends Controller
     {
         Notification::where('type', 'friend_request')->where('user_id', auth()->user()->id)->delete();
 
-        // $recommended = User::where([
-        //         ['country', '=', auth()->user()->country],
-        //         ['programming_language', '=', auth()->user()->programming_language]
-        //     ])->get();
-        $recommended = [];
+        $recommended = User::where('programming_language', '=', auth()->user()->programming_language)->get();
+        if (!$recommended) {
+            $recommended = [];
+        }
 
         $requests = auth()->user()->getPendingFriendships();
 
