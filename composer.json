@@ -19,12 +19,13 @@
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
         "beyondcode/laravel-dump-server": "^1.0",
+        "beyondcode/laravel-er-diagram-generator": "^1.2",
         "filp/whoops": "^2.0",
         "fzaninotto/faker": "^1.4",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^7.5",
-        "tom-lingham/searchy" : "2.*"
+        "tom-lingham/searchy": "2.*"
     },
     "config": {
         "optimize-autoloader": true,
