@@ -11,7 +11,7 @@ class FriendController extends Controller
     {
         Notification::where('type', 'friend_request')->where('user_id', auth()->user()->id)->delete();
 
-        $recommended = User::where('country_id', '=', auth()->user()->country_id)->limit(5)->get();
+        $recommended = User::where('country_id', '=', auth()->user()->country_id)->where('id', '!=', auth()->user()->id)->limit(5)->get();
         if (!$recommended) {
             $recommended = [];
         }
