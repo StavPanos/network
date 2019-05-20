@@ -11,7 +11,7 @@ class FriendController extends Controller
     {
         Notification::where('type', 'friend_request')->where('user_id', auth()->user()->id)->delete();
 
-        $friendships = auth()->user()->getAllFriendships();
+        $friendships = auth()->user()->getAcceptedFriendships();
         $ids = [];
         foreach ($friendships as $friendship){
             $ids[] = $friendship->id;
