@@ -17,7 +17,7 @@ class FriendController extends Controller
             $ids[] = $friendship->id;
         }
 
-        dd($ids);
+//        dd($ids);
 
         $recommended = User::where('country_id', '=', auth()->user()->country_id)
                             ->where('id', '!=', auth()->user()->id)
