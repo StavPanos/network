@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <ul class="list-group">
                             @foreach($requests as $request)
-                                @if($request->sender->id != auth()->user->id)
+                                @if($request->sender->id != auth()->user()->id)
                                 <li class="list-group-item">
                                     <a href="profile/{{$request->id}}">
                                         {{$request->sender->name}}
