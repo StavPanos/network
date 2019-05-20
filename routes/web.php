@@ -33,15 +33,15 @@ Route::post('search', 'SearchController@search')->middleware('verified');
 Route::post('post/create', 'PostController@create')->middleware('auth');
 Route::post('post/delete', 'PostController@destroy')->middleware('auth');
 
-Route::post('avatar', 'ProfileController@update_avatar');
-Route::post('profile/edit', 'ProfileController@update');
+Route::post('avatar', 'ProfileController@update_avatar')->middleware('auth');
+Route::post('profile/edit', 'ProfileController@update')->middleware('auth');
 
-Route::post('project/create', 'ProjectController@create');
-Route::post('project/delete', 'ProjectController@destroy');
+Route::post('project/create', 'ProjectController@create')->middleware('auth');
+Route::post('project/delete', 'ProjectController@destroy')->middleware('auth');
 
 
-Route::post('reply/create', 'ReplyController@create');
-Route::post('reply/delete', 'ReplyController@destroy');
+Route::post('reply/create', 'ReplyController@create')->middleware('auth');
+Route::post('reply/delete', 'ReplyController@destroy')->middleware('auth');
 
 Route::post('profile/planguages', 'ProfileController@planguages');
 
